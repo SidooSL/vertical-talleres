@@ -1,1 +1,4 @@
+community-data-files
+l10n-spain
+partner-contact
 web
