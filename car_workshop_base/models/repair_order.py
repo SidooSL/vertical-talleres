@@ -1,7 +1,7 @@
 ###############################################################################
 # For copyright and license notices, see __manifest__.py file in root directory
 ###############################################################################
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class RepairOrder(models.Model):
@@ -10,19 +10,24 @@ class RepairOrder(models.Model):
     invoice_method = fields.Selection(
         default='b4repair',
     )
-    location_id = fields.Many2one(
-        required=False,
-    )
-    product_id = fields.Many2one(
-        required=False,
-    )
     product_qty = fields.Float(
-        required=False,
+        default=1.0,
     )
-    tracking = fields.Selection(
-        default='none',
+    repair_type = fields.Selection(
+        [
+            ('vehicle_repair', 'Vehicle Repair'),
+            ('other', 'Other'),
+        ],
+        default='vehicle_repair',
+        string='Repair Type',
     )
     vehicle_id = fields.Many2one(
         comodel_name='fleet.vehicle',
         string='Vehicle',
     )
+
+    @api.onchange('vehicle_id')
+    def _onchange_vehicle_id(self):
+        if self.vehicle_id:
+            self.product_id = self.vehicle_id.product_id
+            self.repair_type = 'vehicle_repair'
