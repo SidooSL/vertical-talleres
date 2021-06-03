@@ -1,7 +1,7 @@
 ###############################################################################
 #
-#    SDi Soluciones Informáticas
-#    Copyright (C) 2021-Today SDi Soluciones Informáticas <www.sdi.es>
+#    SDi Soluciones Digitales
+#    Copyright (C) 2021-Today SDi Soluciones Digitales <www.sdi.es>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,7 +20,8 @@
 {
     'name': 'Car Workshop Base',
     'summary': 'Car workshop base module.',
-    'author': 'Óscar Soto Ochoa, SDi Soluciones Informáticas',
+    'author': 'Óscar Soto Ochoa, Valentín Georgian Castravete,'
+              ' SDi Soluciones Digitales',
     'website': 'https://sdi.es/odoo/',
     'license': 'AGPL-3',
     'category': 'Workshop',
@@ -31,5 +32,6 @@
     ],
     'data': [
         'views/repair_order.xml',
+        'views/res_partner.xml',
     ],
 }
