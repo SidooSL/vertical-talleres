@@ -1,12 +1,21 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <record id="view_partner_form_car_workshop" model="ir.ui.view">
+    <record id="res_partner_vehicles" model="ir.actions.act_window">
+        <field name="name">Vehicles</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="domain">[('customer_id', '=', self.id)]</field>
+        <field name="context">{'default_customer_id': self.id,}</field>
+    </record>
+    <record id="view_partner_form" model="ir.ui.view">
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="groups_id" eval="[(4, ref('fleet.fleet_group_user')), (4, ref('fleet.fleet_group_manager'))]"/>
         <field name="arch" type="xml">
             <button name="toggle_active" position="after">
-                <button class="oe_stat_button" name="button_contact_vehicles" icon="fa-truck" type="object">
+                <button class="oe_stat_button" name="%(res_partner_vehicles)d" icon="fa-truck" type="action">
                     <div class="o_field_widget o_stat_info">
                         <span class="o_stat_text">Vehicles</span>
                     </div>

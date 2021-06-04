@@ -31,6 +31,7 @@
         'repair',
     ],
     'data': [
+        'views/fleet_vehicle.xml',
         'views/repair_order.xml',
         'views/res_partner.xml',
     ],

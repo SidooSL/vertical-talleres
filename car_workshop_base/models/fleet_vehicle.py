@@ -8,7 +8,7 @@ class Vehicle(models.Model):
     _inherit = 'fleet.vehicle'
 
     customer_id = fields.Many2one(
-        comodel_name="res.partner",
-        string="Customer",
+        comodel_name='res.partner',
+        string='Customer',
         required=True,
     )
