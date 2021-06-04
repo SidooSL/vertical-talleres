@@ -12,6 +12,11 @@ class FleetVehicle(models.Model):
         string='Product Ref.',
         ondelete='restrict',
     )
+    customer_id = fields.Many2one(
+        comodel_name='res.partner',
+        string='Customer',
+        required=True,
+    )
 
     @api.model
     def create(self, data):
