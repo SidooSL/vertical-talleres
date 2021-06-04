@@ -19,6 +19,9 @@
                     </div>
                 </button>       
             </xpath>
+            <xpath expr="//field[@name='tracking']" position="before">
+                <field name="create_uid" string="Attended by"/>
+            </xpath>
             <xpath expr="//field[@name='location_id']" position="attributes">
                 <attribute name="attrs">{'invisible': [('repair_type', '=', 'vehicle_repair')]}</attribute>
             </xpath>
