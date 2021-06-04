@@ -27,6 +27,7 @@
     'version': '12.0.1.0.0',
     'depends': [
         'car_workshop_base',
+        'contacts',
         'web_responsive',
     ],
 }
