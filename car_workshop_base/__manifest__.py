@@ -29,7 +29,6 @@
     'depends': [
         'fleet',
         'repair',
-        'web_tree_many2one_clickable',
     ],
     'data': [
         'views/fleet_vehicle.xml',
