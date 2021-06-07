@@ -10,6 +10,11 @@ class RepairOrder(models.Model):
     invoice_method = fields.Selection(
         default='b4repair',
     )
+    parent_id = fields.Many2one(
+        comodel_name='repair.order',
+        domain='[(\'id\', \'!=\', active_id)]',
+        string='OR Parent',
+    )
     product_qty = fields.Float(
         default=1.0,
     )
@@ -29,5 +34,6 @@ class RepairOrder(models.Model):
     @api.onchange('vehicle_id')
     def _onchange_vehicle_id(self):
         if self.vehicle_id:
+            self.partner_id = self.vehicle_id.customer_id
             self.product_id = self.vehicle_id.product_id
             self.repair_type = 'vehicle_repair'

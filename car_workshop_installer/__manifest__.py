@@ -29,5 +29,6 @@
         'car_workshop_base',
         'contacts',
         'web_responsive',
+        'web_tree_many2one_clickable',
     ],
 }
