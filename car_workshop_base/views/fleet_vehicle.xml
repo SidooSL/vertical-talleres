@@ -4,9 +4,65 @@
         <field name="model">fleet.vehicle</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='license_plate']/.." position="after">
+                <label for="model_version" class="oe_edit_only"/>
+                <h3>
+                    <field name="model_version" class="oe_inline"/>
+                </h3>
+            </xpath>
+            <field name="acquisition_date" position="after">
+                <field name="last_mot"/>
+                <field name="next_mot"/>
+            </field>
             <field name="driver_id" position="after">
                 <field name="customer_id"/>
+                <field name="partner_invoice_id"/>
             </field>
+            <xpath expr="//field[@name='power']/.." position="after">
+                <field name="horsepower" position="move"/>
+            </xpath>
+            <field name="model_year" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </field>
+            <field name="first_contract_date" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </field>
+            <field name="car_value" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </field>
+            <field name="location" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </field>
+            <field name="residual_value" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </field>
+            <field name="transmission" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </field>
+            <field name="fuel_type" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </field>
+            <label for="co2" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </label>
+            <div name="co2" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </div>
+            <field name="seats" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </field>
+            <field name="doors" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </field>
+            <xpath expr="//field[@name='contract_count']/.." position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </xpath>
+            <button name="act_show_log_cost" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </button>
+            <xpath expr="//field[@name='fuel_logs_count']/.." position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </xpath>
         </field>
     </record>
 </odoo>

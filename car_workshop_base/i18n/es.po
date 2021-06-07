@@ -1,0 +1,184 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* car_workshop_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-07 10:10+0000\n"
+"PO-Revision-Date: 2021-06-07 10:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: car_workshop_base
+#: model_terms:ir.ui.view,arch_db:car_workshop_base.view_partner_form
+msgid "<span class=\"o_stat_text\">Vehicles</span>"
+msgstr "<span class=\"o_stat_text\">Vehículos</span>"
+
+#. module: car_workshop_base
+#: selection:repair.order,invoice_method:0
+msgid "After Repair"
+msgstr "Después de la reparación"
+
+#. module: car_workshop_base
+#: selection:repair.order,invoice_method:0
+msgid "Before Repair"
+msgstr "Antes de la reparación"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__vin_sn
+msgid "Chassis Number"
+msgstr "Número de bastidor"
+
+#. module: car_workshop_base
+#: model:ir.model,name:car_workshop_base.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__customer_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,help:car_workshop_base.field_fleet_vehicle__acquisition_date
+msgid "Date when the vehicle has been immatriculated"
+msgstr "Fecha en la que el vehículo ha sido registrado"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__driver_id
+msgid "Driver"
+msgstr "Conductor"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,help:car_workshop_base.field_fleet_vehicle__driver_id
+msgid "Driver of the vehicle"
+msgstr "Conductor del vehículo"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__acquisition_date
+msgid "Immatriculation Date"
+msgstr "Fecha de registro"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__invoice_method
+msgid "Invoice Method"
+msgstr "Método de facturación"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__invoicing_customer
+msgid "Invoice address"
+msgstr "Dirección de facturación"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__last_mot
+msgid "Last MOT"
+msgstr "Última ITV"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__license_plate
+msgid "License Plate"
+msgstr "Matrícula"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,help:car_workshop_base.field_fleet_vehicle__license_plate
+msgid "License plate number of the vehicle (i = plate number for a car)"
+msgstr "Número de matrícula del vehículo (es decir, número de placa para un vehículo)"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__model_version
+msgid "Model Version"
+msgstr "Versión del modelo"
+
+#. module: car_workshop_base
+#: model:ir.model,name:car_workshop_base.model_fleet_vehicle_model
+msgid "Model of a vehicle"
+msgstr "Modelo de un vehículo"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__next_mot
+msgid "Next MOT"
+msgstr "Siguiente ITV"
+
+#. module: car_workshop_base
+#: selection:repair.order,invoice_method:0
+msgid "No Invoice"
+msgstr "Sin factura"
+
+#. module: car_workshop_base
+#: selection:repair.order,repair_type:0
+msgid "Other"
+msgstr "Otro"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__product_qty
+msgid "Product Quantity"
+msgstr "Cantidad producto"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__product_id
+msgid "Product Ref."
+msgstr "Ref. de producto"
+
+#. module: car_workshop_base
+#: model:res.groups,name:car_workshop_base.group_renting
+msgid "Renting"
+msgstr "Alquilar"
+
+#. module: car_workshop_base
+#: model:ir.model,name:car_workshop_base.model_repair_order
+msgid "Repair Order"
+msgstr "Orden de reparación"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__repair_type
+msgid "Repair Type"
+msgstr "Tipo de reparación"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,help:car_workshop_base.field_repair_order__invoice_method
+msgid "Selecting 'Before Repair' or 'After Repair' will allow you to generate invoice before or after the repair is done respectively. 'No invoice' means you don't want to generate invoice for this repair order."
+msgstr "Seleccionando 'Antes de reparar' o 'Después de reparar' permitirá generar las facturas antes o después de que se realice la reparación respectivamente. 'Sin factura' significa que no quiere generar factura para esta orden de reparación."
+
+#. module: car_workshop_base
+#: code:addons/car_workshop_base/models/fleet_vehicle.py:54
+#, python-format
+msgid "The license plate only accepts alphanumeric caps characters."
+msgstr "La matrículo solo acepta caracteres alfanuméricos capitalizados."
+
+#. module: car_workshop_base
+#: model:res.groups,comment:car_workshop_base.group_renting
+msgid "The user can see all configuration on Car Workshop."
+msgstr "El usuario puede ver toda la configuración de Car Workshop."
+
+#. module: car_workshop_base
+#: code:addons/car_workshop_base/models/fleet_vehicle.py:61
+#, python-format
+msgid "The vin number needs to have 17 alphanumeric caps characters."
+msgstr "El número de bastidor necesita estar compuesto de 17 caracteres alfanuméricos capitalizados."
+
+#. module: car_workshop_base
+#: model:ir.model.fields,help:car_workshop_base.field_fleet_vehicle__vin_sn
+msgid "Unique number written on the vehicle motor (VIN/SN number)"
+msgstr "Nº único escrito en el motor del vehículo (nº de identificación del vehículo o nº de serie)"
+
+#. module: car_workshop_base
+#: model:ir.model,name:car_workshop_base.model_fleet_vehicle
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__vehicle_id
+msgid "Vehicle"
+msgstr "Vehículo"
+
+#. module: car_workshop_base
+#: selection:repair.order,repair_type:0
+msgid "Vehicle Repair"
+msgstr "Reparación de vehículo"
+
+#. module: car_workshop_base
+#: model:ir.actions.act_window,name:car_workshop_base.res_partner_vehicles
+msgid "Vehicles"
+msgstr "Vehículos"
