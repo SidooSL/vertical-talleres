@@ -16,7 +16,7 @@
             </field>
             <field name="driver_id" position="after">
                 <field name="customer_id"/>
-                <field name="invoicing_customer"/>
+                <field name="partner_invoice_id"/>
             </field>
             <xpath expr="//field[@name='power']/.." position="after">
                 <field name="horsepower" position="move"/>

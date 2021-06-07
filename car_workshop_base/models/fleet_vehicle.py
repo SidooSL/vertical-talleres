@@ -9,7 +9,21 @@ import re
 class FleetVehicle(models.Model):
     _inherit = 'fleet.vehicle'
 
+    acquisition_date = fields.Date(
+        required=True,
+    )
+    customer_id = fields.Many2one(
+        comodel_name='res.partner',
+        string='Customer',
+        required=True,
+    )
     driver_id = fields.Many2one(
+        required=True,
+    )
+    last_mot = fields.Date(
+        string='Last MOT',
+    )
+    license_plate = fields.Char(
         required=True,
     )
     product_id = fields.Many2one(
@@ -17,33 +31,19 @@ class FleetVehicle(models.Model):
         string='Product Ref.',
         ondelete='restrict',
     )
-    customer_id = fields.Many2one(
-        comodel_name='res.partner',
-        string='Customer',
-        required=True,
-    )
-    license_plate = fields.Char(
-        required=True,
-    )
-    vin_sn = fields.Char(
-        required=True,
-    )
-    acquisition_date = fields.Date(
-        required=True,
-    )
     model_version = fields.Char(
         string='Model Version',
         required=True,
     )
-    last_mot = fields.Date(
-        string='Last MOT',
-    )
     next_mot = fields.Date(
         string='Next MOT',
     )
-    invoicing_customer = fields.Many2one(
+    partner_invoice_id = fields.Many2one(
         comodel_name='res.partner',
-        string='Invoicing Customer',
+        string='Invoice address',
+        required=True,
+    )
+    vin_sn = fields.Char(
         required=True,
     )
 
@@ -61,13 +61,13 @@ class FleetVehicle(models.Model):
             raise ValidationError(_('The vin number needs to have 17'
                                     ' alphanumeric caps characters.'))
 
+    @api.onchange('driver_id')
+    def _onchange_driver_id(self):
+        self.partner_invoice_id = self.driver_id
+
     @api.onchange('last_mot')
     def _onchange_last_mot(self):
         self.next_mot = self.last_mot.replace(year=self.last_mot.year + 1)
-
-    @api.onchange('driver_id')
-    def _onchange_driver_id(self):
-        self.customer_to_invoice = self.driver_id
 
     @api.model
     def create(self, data):
