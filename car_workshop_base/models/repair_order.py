@@ -12,7 +12,7 @@ class RepairOrder(models.Model):
     )
     parent_id = fields.Many2one(
         comodel_name='repair.order',
-        domain='[(\'id\', \'!=\', active_id)]',
+        domain=[('id', '!=', active_id)],
         string='OR Parent',
     )
     product_qty = fields.Float(
