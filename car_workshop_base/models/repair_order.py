@@ -17,7 +17,7 @@ class RepairOrder(models.Model):
         default='b4repair',
     )
     is_blocked_to_drive = fields.Boolean(
-        string='Is blocked to drive?'
+        string='Is blocked to drive?',
     )
     is_damaged = fields.Boolean(
         string='Is damaged?',
