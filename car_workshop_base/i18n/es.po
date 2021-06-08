@@ -26,6 +26,16 @@ msgid "After Repair"
 msgstr "Después de la reparación"
 
 #. module: car_workshop_base
+#: model:ir.ui.menu,name:car_workshop_base.menu_catalog_variants_action
+msgid "Attribute Values"
+msgstr "Valores de atributo"
+
+#. module: car_workshop_base
+#: model:ir.ui.menu,name:car_workshop_base.menu_attribute_action
+msgid "Attributes"
+msgstr "Atributos"
+
+#. module: car_workshop_base
 #: selection:repair.order,invoice_method:0
 msgid "Before Repair"
 msgstr "Antes de la reparación"
@@ -34,6 +44,11 @@ msgstr "Antes de la reparación"
 #: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__vin_sn
 msgid "Chassis Number"
 msgstr "Número de bastidor"
+
+#. module: car_workshop_base
+#: model:ir.ui.menu,name:car_workshop_base.menu_sales_configuration
+msgid "Configuration"
+msgstr "Configuración"
 
 #. module: car_workshop_base
 #: model:ir.model,name:car_workshop_base.model_res_partner
@@ -116,6 +131,16 @@ msgid "Other"
 msgstr "Otro"
 
 #. module: car_workshop_base
+#: model:ir.ui.menu,name:car_workshop_base.menu_product_pricelist_main
+msgid "Pricelists"
+msgstr "Tarifas"
+
+#. module: car_workshop_base
+#: model:ir.ui.menu,name:car_workshop_base.menu_product_categories
+msgid "Product Categories"
+msgstr "Categorías de productos"
+
+#. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__product_qty
 msgid "Product Quantity"
 msgstr "Cantidad producto"
@@ -124,6 +149,16 @@ msgstr "Cantidad producto"
 #: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__product_id
 msgid "Product Ref."
 msgstr "Ref. de producto"
+
+#. module: car_workshop_base
+#: model:ir.ui.menu,name:car_workshop_base.menu_products
+msgid "Product Variants"
+msgstr "Variantes de producto"
+
+#. module: car_workshop_base
+#: model:ir.ui.menu,name:car_workshop_base.menu_product_template_action
+msgid "Products"
+msgstr "Productos"
 
 #. module: car_workshop_base
 #: model:res.groups,name:car_workshop_base.group_renting
@@ -141,9 +176,19 @@ msgid "Repair Type"
 msgstr "Tipo de reparación"
 
 #. module: car_workshop_base
+#: model:ir.ui.menu,name:car_workshop_base.menu_sales
+msgid "Sales"
+msgstr "Ventas"
+
+#. module: car_workshop_base
 #: model:ir.model.fields,help:car_workshop_base.field_repair_order__invoice_method
 msgid "Selecting 'Before Repair' or 'After Repair' will allow you to generate invoice before or after the repair is done respectively. 'No invoice' means you don't want to generate invoice for this repair order."
 msgstr "Seleccionando 'Antes de reparar' o 'Después de reparar' permitirá generar las facturas antes o después de que se realice la reparación respectivamente. 'Sin factura' significa que no quiere generar factura para esta orden de reparación."
+
+#. module: car_workshop_base
+#: model:ir.ui.menu,name:car_workshop_base.menu_stock
+msgid "Stock"
+msgstr "Inventario"
 
 #. module: car_workshop_base
 #: code:addons/car_workshop_base/models/fleet_vehicle.py:54
