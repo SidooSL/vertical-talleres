@@ -32,6 +32,7 @@
     ],
     'data': [
         'security/car_workshop_security.xml',
+        'views/car_workshop_menu_views.xml',
         'views/fleet_vehicle.xml',
         'views/repair_order.xml',
         'views/res_partner.xml',
