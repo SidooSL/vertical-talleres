@@ -17,10 +17,15 @@ class RepairOrder(models.Model):
         default='b4repair',
     )
     is_blocked_to_drive = fields.Boolean(
-        string='Is blocked to drive?'
+        string='Is blocked to drive?',
     )
     is_damaged = fields.Boolean(
-        string='Is damaged?'
+        string='Is damaged?',
+    )
+    name = fields.Char(
+        readonly=True,
+        required=False,
+        default='',
     )
     parent_id = fields.Many2one(
         comodel_name='repair.order',
@@ -46,6 +51,12 @@ class RepairOrder(models.Model):
         comodel_name='fleet.vehicle',
         string='Vehicle',
     )
+
+    @api.model
+    def create(self, values):
+        res = super().create(values)
+        res['name'] = self.env['ir.sequence'].next_by_code('repair.order')
+        return res
 
     @api.onchange('vehicle_id')
     def _onchange_vehicle_id(self):
