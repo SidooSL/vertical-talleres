@@ -60,6 +60,16 @@ msgstr "Conductor"
 msgid "Driver of the vehicle"
 msgstr "Conductor del vehículo"
 
+#. module: fleet
+#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__horsepower
+msgid "Horsepower"
+msgstr "Potencia real"
+
+#. module: fleet
+#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__horsepower_tax
+msgid "Horsepower Taxation"
+msgstr "Cilindrada"
+
 #. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__acquisition_date
 msgid "Immatriculation Date"
@@ -114,6 +124,11 @@ msgstr "Sin factura"
 #: selection:repair.order,repair_type:0
 msgid "Other"
 msgstr "Otro"
+
+#. module: fleet
+#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__power
+msgid "Power"
+msgstr "Potencia fiscal"
 
 #. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__product_qty
