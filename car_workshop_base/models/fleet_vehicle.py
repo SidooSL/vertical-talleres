@@ -63,11 +63,13 @@ class FleetVehicle(models.Model):
 
     @api.onchange('driver_id')
     def _onchange_driver_id(self):
-        self.partner_invoice_id = self.driver_id
+        if self.driver_id:
+            self.partner_invoice_id = self.driver_id
 
     @api.onchange('last_mot')
     def _onchange_last_mot(self):
-        self.next_mot = self.last_mot.replace(year=self.last_mot.year + 1)
+        if self.last_mot:
+            self.next_mot = self.last_mot.replace(year=self.last_mot.year + 1)
 
     @api.model
     def create(self, data):
@@ -97,4 +99,4 @@ class FleetVehicle(models.Model):
             'product_uom_id': product.uom_id.id,
             'qty_done': 1.0,
         })
-        return re
+        return rec
