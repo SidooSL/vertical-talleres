@@ -10,6 +10,11 @@ class RepairOrder(models.Model):
     invoice_method = fields.Selection(
         default='b4repair',
     )
+    name = fields.Char(
+        readonly=True,
+        required=False,
+        default='',
+    )
     parent_id = fields.Many2one(
         comodel_name='repair.order',
         domain='[(\'id\', \'!=\', active_id)]',
@@ -30,6 +35,12 @@ class RepairOrder(models.Model):
         comodel_name='fleet.vehicle',
         string='Vehicle',
     )
+
+    @api.model
+    def create(self, values):
+        res = super().create(values)
+        res['name'] = self.env['ir.sequence'].next_by_code('repair.order')
+        return res
 
     @api.onchange('vehicle_id')
     def _onchange_vehicle_id(self):
