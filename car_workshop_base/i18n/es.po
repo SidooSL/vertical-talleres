@@ -81,7 +81,7 @@ msgid "Invoice Method"
 msgstr "Método de facturación"
 
 #. module: car_workshop_base
-#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__invoicing_customer
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__partner_invoice_id
 msgid "Invoice address"
 msgstr "Dirección de facturación"
 
