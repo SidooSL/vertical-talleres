@@ -2,6 +2,22 @@
 <odoo>
     <record id="group_renting" model="res.groups">
         <field name="name">Renting</field>
-        <field name="comment">The user can see all configuration on Car Workshop.</field>
+        <field name="comment">The user can see all fields on vehicle form.</field>
+    </record>
+    <record model="ir.module.category" id="module_car_workshop">
+        <field name="name">Car Workshop</field>
+        <field name="description">Car Wokshop permission</field>
+        <field name="sequence">1</field>
+    </record>
+    <record id="group_tier_1" model="res.groups">
+        <field name="name">Tier 1</field>
+        <field name="comment">The user can see the menus on Repair Orders.</field>
+        <field name="category_id" ref="module_car_workshop"/>
+    </record>
+    <record id="group_tier_2" model="res.groups">
+        <field name="name">Tier 2</field>
+        <field name="comment">The user can *.</field>
+        <field name="category_id" ref="module_car_workshop"/>
+        <field name="implied_ids" eval="[(4, ref('group_tier_1'))]"/>
     </record>
 </odoo>
