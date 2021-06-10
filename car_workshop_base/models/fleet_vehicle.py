@@ -12,9 +12,9 @@ class FleetVehicle(models.Model):
     acquisition_date = fields.Date(
         required=True,
     )
-    customer_id = fields.Many2one(
+    partner_id = fields.Many2one(
         comodel_name='res.partner',
-        string='Customer',
+        string='Owner',
         required=True,
     )
     driver_id = fields.Many2one(
