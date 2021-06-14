@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-07 10:10+0000\n"
-"PO-Revision-Date: 2021-06-07 10:10+0000\n"
+"POT-Creation-Date: 2021-06-14 10:10+0000\n"
+"PO-Revision-Date: 2021-06-14 10:10+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -54,11 +54,6 @@ msgstr "Configuración"
 #: model:ir.model,name:car_workshop_base.model_res_partner
 msgid "Contact"
 msgstr "Contacto"
-
-#. module: car_workshop_base
-#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__partner_id
-msgid "Owner"
-msgstr "Propietario"
 
 #. module: car_workshop_base
 #: model:ir.model.fields,help:car_workshop_base.field_fleet_vehicle__acquisition_date
@@ -139,6 +134,11 @@ msgstr "Sin factura"
 #: selection:repair.order,repair_type:0
 msgid "Other"
 msgstr "Otro"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__partner_id
+msgid "Owner"
+msgstr "Titular"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__power
