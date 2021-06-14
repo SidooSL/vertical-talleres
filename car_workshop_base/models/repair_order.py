@@ -7,8 +7,20 @@ from odoo import api, fields, models
 class RepairOrder(models.Model):
     _inherit = 'repair.order'
 
+    company_currency = fields.Many2one(
+        readonly=True,
+        relation='res.currency',
+        related='company_id.currency_id',
+        string='Currency',
+    )
     invoice_method = fields.Selection(
         default='b4repair',
+    )
+    is_blocked_to_drive = fields.Boolean(
+        string='Is blocked to drive?',
+    )
+    is_damaged = fields.Boolean(
+        string='Is damaged?',
     )
     name = fields.Char(
         readonly=True,
@@ -22,6 +34,10 @@ class RepairOrder(models.Model):
     )
     product_qty = fields.Float(
         default=1.0,
+    )
+    planned_revenue = fields.Monetary(
+        currency_field='company_currency',
+        string='Expected Revenue',
     )
     repair_type = fields.Selection(
         [

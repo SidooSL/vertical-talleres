@@ -17,7 +17,21 @@
                     <div class="o_field_widget o_stat_info">
                         <span class="o_stat_text">SubOrds</span>
                     </div>
-                </button>       
+                </button>
+            </xpath>
+            <xpath expr="//h1" position="after">
+                <field name="repair_type" widget="radio" class="oe_edit_only" options="{'horizontal': true}"/>
+                <h2 class="o_row row no-gutters d-flex">
+                    <div class="col">
+                        <label for="planned_revenue" class="oe_edit_only" />
+                        <div class="o_row">
+                            <div>
+                                <field name="company_currency" invisible="1"/>
+                                <field name="planned_revenue" class="oe_inline" widget='monetary' options="{'currency_field': 'company_currency'}"/>
+                            </div>
+                        </div>
+                    </div>
+                </h2>
             </xpath>
             <xpath expr="//field[@name='tracking']" position="before">
                 <field name="create_uid" string="Attended by"/>
@@ -40,14 +54,17 @@
             <xpath expr="//label[@for='product_qty']" position="attributes">
                 <attribute name="attrs">{'invisible': [('repair_type', '=', 'vehicle_repair')]}</attribute>
             </xpath>
-            <xpath expr="//h1" position="after">
-                <field name="repair_type" widget="radio" class="oe_edit_only" options="{'horizontal': true}"/>
-            </xpath>
             <xpath expr="//field[@name='partner_id']" position="before">
                 <field name="vehicle_id" attrs="{'required': [('repair_type', '=', 'vehicle_repair')]}"/>
             </xpath>
-            <xpath expr="//field[@name='partner_invoice_id']" position="after">
-                <field name="parent_id"/>                
+            <xpath expr="//sheet/group" position="inside">
+                <group>
+                    <field name="is_blocked_to_drive"/>
+                    <field name="is_damaged"/>
+                </group>
+                <group>
+                    <field name="parent_id"/>
+                </group>
             </xpath>
             <xpath expr="//page[field[@name='internal_notes']]" position="attributes">
                 <attribute name="string">Internal Notes</attribute>
