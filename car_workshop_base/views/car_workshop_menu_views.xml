@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <menuitem id="menu_sales" name="Sales" parent="repair.menu_repair_order" sequence="4" groups="car_workshop_base.group_tier_1"/>
+    <menuitem id="menu_sales" name="Sales" parent="repair.menu_repair_order" sequence="4"/>
     <menuitem id="menu_product_template_action" parent="menu_sales" action="product.product_template_action" sequence="4"/>
     <menuitem id="menu_products" parent="menu_sales" action="product.product_normal_action_sell" sequence="8"/>
     <menuitem id="menu_product_pricelist_main" parent="menu_sales" action="product.product_pricelist_action2" sequence="12" groups="product.group_sale_pricelist"/>
     <menuitem id="menu_sales_configuration" name="Configuration" parent="menu_sales" sequence="16"/>
     <menuitem id="menu_attribute_action" parent="menu_sales_configuration" action="product.attribute_action" sequence="4" groups="product.group_product_variant"/>
     <menuitem id="menu_catalog_variants_action" parent="menu_sales_configuration" action="product.variants_action" sequence="8" groups="product.group_product_variant"/>
-    <menuitem id="menu_stock" name="Stock" parent="repair.menu_repair_order" sequence="8" groups="car_workshop_base.group_tier_1"/>
+    <menuitem id="menu_stock" name="Stock" parent="repair.menu_repair_order" sequence="8"/>
     <menuitem id="menu_product_categories" parent="menu_stock" action="product.product_category_action_form" sequence="4"/>
 </odoo>
