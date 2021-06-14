@@ -2,6 +2,6 @@
 <odoo>
     <record id="group_renting" model="res.groups">
         <field name="name">Renting</field>
-        <field name="comment">The user can see all configuration on Car Workshop.</field>
+        <field name="comment">The user can see all fields on vehicle form.</field>
     </record>
 </odoo>
