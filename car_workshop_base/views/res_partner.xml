@@ -6,8 +6,8 @@
         <field name="res_model">fleet.vehicle</field>
         <field name="view_mode">tree,form</field>
         <field name="view_type">form</field>
-        <field name="domain">[('customer_id', '=', active_id)]</field>
-        <field name="context">{'default_customer_id': active_id,}</field>
+        <field name="domain">[('partner', '=', active_id)]</field>
+        <field name="context">{'default_partner': active_id,}</field>
     </record>
     <record id="view_partner_form" model="ir.ui.view">
         <field name="model">res.partner</field>

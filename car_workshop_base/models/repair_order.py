@@ -61,6 +61,6 @@ class RepairOrder(models.Model):
     @api.onchange('vehicle_id')
     def _onchange_vehicle_id(self):
         if self.vehicle_id:
-            self.partner_id = self.vehicle_id.customer_id
+            self.partner_id = self.vehicle_id.partner_id
             self.product_id = self.vehicle_id.product_id
             self.repair_type = 'vehicle_repair'
