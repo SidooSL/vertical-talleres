@@ -26,6 +26,9 @@ class FleetVehicle(models.Model):
     license_plate = fields.Char(
         required=True,
     )
+    odometer = fields.Float(
+        track_visibility='always',
+    )
     product_id = fields.Many2one(
         comodel_name='product.product',
         string='Product Ref.',
