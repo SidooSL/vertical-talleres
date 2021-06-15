@@ -40,7 +40,8 @@
                 <field name="create_uid" string="Attended by"/>
             </xpath>
             <xpath expr="//field[@name='location_id']" position="before">
-                <field name="create_date"/>                
+                <field name="create_date"/>
+                <field name="arrival_date"/>
             </xpath>
             <xpath expr="//field[@name='location_id']" position="attributes">
                 <attribute name="attrs">{'invisible': [('repair_type', '=', 'vehicle_repair')]}</attribute>
@@ -67,10 +68,11 @@
                 <group>
                     <field name="odometer"/>
                     <field name="new_odometer" attrs="{'required': [('repair_type', '=', 'vehicle_repair')], 'readonly': [('vehicle_id', '=', False)]}"/>
-                    <field name="is_blocked_to_drive"/>
-                    <field name="is_damaged"/>
+                    <field name="fuel" attrs="{'required': [('repair_type', '=', 'vehicle_repair')]}"/>
                 </group>
                 <group>
+                    <field name="is_blocked_to_drive"/>
+                    <field name="is_damaged"/>
                     <field name="parent_id"/>
                 </group>
             </xpath>

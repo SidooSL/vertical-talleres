@@ -8,6 +8,11 @@ from odoo.exceptions import ValidationError
 class RepairOrder(models.Model):
     _inherit = 'repair.order'
 
+    arrival_date = fields.Datetime(
+        string='Arrival Date',
+        required=True,
+        help='The arrival date of the vehicle.'
+    )
     child_ids = fields.One2many(
         comodel_name='repair.order',
         inverse_name='parent_id',
@@ -17,6 +22,9 @@ class RepairOrder(models.Model):
         relation='res.currency',
         related='company_id.currency_id',
         string='Currency',
+    )
+    fuel = fields.Integer(
+        string='Fuel (%)',
     )
     invoice_method = fields.Selection(
         default='b4repair',
