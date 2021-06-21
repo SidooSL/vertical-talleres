@@ -1,4 +1,27 @@
-community-data-files
-l10n-spain
+muk_base git@github.com:SDIsl/muk_base.git
+muk_dms git@github.com:SDIsl/muk_dms.git
+muk_web git@github.com:SDIsl/muk_web.git
+sdi-addons git@github.com:SDIsl/sdi-addons.git
+talleres-addons git@github.com:SDIsl/talleres-addons.git
+dms
+event
+helpdesk
+hr
 partner-contact
+l10n-spain
+server-auth
+server-ux
+server-tools
+social
+survey
+timesheet
 web
+website
+community-data-files
+account-financial-tools
+account-financial-reporting
+product-attribute
+reporting-engine
+account-payment
+account-reconcile
+credit-control
