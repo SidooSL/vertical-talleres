@@ -1,8 +1,13 @@
 ###############################################################################
 # For copyright and license notices, see __manifest__.py file in root directory
 ###############################################################################
-from . import fleet_vehicle
-from . import fleet_vehicle_model
-from . import product_template
-from . import repair_line
-from . import repair_order
+from odoo import api, fields, models
+
+
+class ProductTemplate(models.Model):
+    _inherit = 'product.template'
+
+    vehicle_brand_id = fields.Many2one(
+        comodel_name='fleet.vehicle.model.brand',
+        string='Vehicle Brand',
+    )

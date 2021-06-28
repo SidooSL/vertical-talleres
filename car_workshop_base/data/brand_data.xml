@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="brand_seat" model="fleet.vehicle.model.brand">
+            <field name="name">Seat</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_seat-image.png"/>
+        </record>
+        <record id="brand_iveco" model="fleet.vehicle.model.brand">
+            <field name="name">Iveco</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_iveco-image.png"/>
+        </record>
+        <record id="brand_valeo" model="fleet.vehicle.model.brand">
+            <field name="name">Valeo</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_valeo-image.png"/>
+        </record>
+    </data>
+</odoo>
