@@ -25,3 +25,4 @@ reporting-engine
 account-payment
 account-reconcile
 credit-control
+contract
