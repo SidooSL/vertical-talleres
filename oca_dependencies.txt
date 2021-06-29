@@ -26,3 +26,4 @@ account-payment
 account-reconcile
 credit-control
 contract
+stock-logistics-workflow
