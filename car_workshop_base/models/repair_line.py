@@ -8,5 +8,5 @@ class RepairLine(models.Model):
     _inherit = 'repair.line'
 
     product_id = fields.Many2one(
-        domain=[('type', 'in', ['consu', 'product'])]
+        domain=[('type', 'in', ['consu', 'product'])],
     )

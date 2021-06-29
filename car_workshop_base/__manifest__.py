@@ -31,10 +31,16 @@
         'repair',
     ],
     'data': [
+        'data/brand_data.xml',
         'security/car_workshop_security.xml',
         'views/car_workshop_menu_views.xml',
         'views/fleet_vehicle.xml',
+        'views/product_template.xml',
         'views/repair_order.xml',
         'views/res_partner.xml',
     ],
+    'demo': [
+        'data/products_demo.xml',
+    ],
+    'application': True,
 }

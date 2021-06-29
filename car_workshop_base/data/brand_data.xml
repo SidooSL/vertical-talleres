@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="brand_aro" model="fleet.vehicle.model.brand">
+            <field name="name">Aro</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_aro-image.png"/>
+        </record>
+        <record id="brand_asia" model="fleet.vehicle.model.brand">
+            <field name="name">Asia Motors</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_asia-image.png"/>
+        </record>
+        <record id="brand_aston_martin" model="fleet.vehicle.model.brand">
+            <field name="name">Aston Martin</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_aston_martin-image.png"/>
+        </record>
+        <record id="brand_auverland" model="fleet.vehicle.model.brand">
+            <field name="name">Auverland</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_auverland-image.png"/>
+        </record>
+        <record id="brand_bertone" model="fleet.vehicle.model.brand">
+            <field name="name">Bertone</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_bertone-image.png"/>
+        </record>
+        <record id="brand_corvette" model="fleet.vehicle.model.brand">
+            <field name="name">Corvette</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_corvette-image.png"/>
+        </record>
+        <record id="brand_dacia" model="fleet.vehicle.model.brand">
+            <field name="name">Dacia</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_dacia-image.png"/>
+        </record>
+        <record id="brand_daf" model="fleet.vehicle.model.brand">
+            <field name="name">Daf</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_daf-image.png"/>
+        </record>
+        <record id="brand_daihatsu" model="fleet.vehicle.model.brand">
+            <field name="name">Daihatsu</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_daihatsu-image.png"/>
+        </record>
+        <record id="brand_daimler" model="fleet.vehicle.model.brand">
+            <field name="name">Daimler</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_daimler-image.png"/>
+        </record>
+        <record id="brand_galloper" model="fleet.vehicle.model.brand">
+            <field name="name">Galloper</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_galloper-image.png"/>
+        </record>
+        <record id="brand_gmc" model="fleet.vehicle.model.brand">
+            <field name="name">Gmc</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_gmc-image.png"/>
+        </record>
+        <record id="brand_hummer" model="fleet.vehicle.model.brand">
+            <field name="name">Hummer</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_hummer-image.png"/>
+        </record>
+        <record id="brand_innocenti" model="fleet.vehicle.model.brand">
+            <field name="name">Innocenti</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_innocenti-image.png"/>
+        </record>
+        <record id="brand_iveco_pegaso" model="fleet.vehicle.model.brand">
+            <field name="name">Iveco Pegaso</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_iveco_pegaso-image.png"/>
+        </record>
+        <record id="brand_lada" model="fleet.vehicle.model.brand">
+            <field name="name">Lada</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_lada-image.png"/>
+        </record>
+        <record id="brand_lamborghini" model="fleet.vehicle.model.brand">
+            <field name="name">Lamborghini</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_lamborghini-image.png"/>
+        </record>
+        <record id="brand_ldv" model="fleet.vehicle.model.brand">
+            <field name="name">Ldv</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_ldv-image.png"/>
+        </record>
+        <record id="brand_mahindra" model="fleet.vehicle.model.brand">
+            <field name="name">Mahindra</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_mahindra-image.png"/>
+        </record>
+        <record id="brand_santana" model="fleet.vehicle.model.brand">
+            <field name="name">Santana</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_santana-image.png"/>
+        </record>
+        <record id="brand_ssangyong" model="fleet.vehicle.model.brand">
+            <field name="name">Ssangyong</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_ssangyong-image.png"/>
+        </record>
+        <record id="brand_talbot" model="fleet.vehicle.model.brand">
+            <field name="name">Talbot</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_talbot-image.png"/>
+        </record>
+        <record id="brand_tata" model="fleet.vehicle.model.brand">
+            <field name="name">Tata</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_tata-image.png"/>
+        </record>
+        <record id="brand_umm" model="fleet.vehicle.model.brand">
+            <field name="name">Umm</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_umm-image.png"/>
+        </record>
+        <record id="brand_rover_rover" model="fleet.vehicle.model.brand">
+            <field name="name">Rover</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_rover-image.png"/>
+        </record>
+        <record id="brand_vaz" model="fleet.vehicle.model.brand">
+            <field name="name">Vaz</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_vaz-image.png"/>
+        </record>
+        <record id="brand_iveco" model="fleet.vehicle.model.brand">
+            <field name="name">Iveco</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_iveco-image.png"/>
+        </record>
+        <record id="brand_seat" model="fleet.vehicle.model.brand">
+            <field name="name">Seat</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_seat-image.png"/>
+        </record>
+        <record id="brand_valeo" model="fleet.vehicle.model.brand">
+            <field name="name">Valeo</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_valeo-image.png"/>
+        </record>
+    </data>
+</odoo>
