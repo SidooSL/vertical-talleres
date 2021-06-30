@@ -65,10 +65,6 @@
             <field name="name">Lada</field>
             <field name="image" type="base64" file="car_workshop_base/static/img/brand_lada-image.png"/>
         </record>
-        <record id="brand_lamborghini" model="fleet.vehicle.model.brand">
-            <field name="name">Lamborghini</field>
-            <field name="image" type="base64" file="car_workshop_base/static/img/brand_lamborghini-image.png"/>
-        </record>
         <record id="brand_ldv" model="fleet.vehicle.model.brand">
             <field name="name">Ldv</field>
             <field name="image" type="base64" file="car_workshop_base/static/img/brand_ldv-image.png"/>
@@ -104,6 +100,10 @@
         <record id="brand_vaz" model="fleet.vehicle.model.brand">
             <field name="name">Vaz</field>
             <field name="image" type="base64" file="car_workshop_base/static/img/brand_vaz-image.png"/>
+        </record>
+        <record id="brand_wartburg" model="fleet.vehicle.model.brand">
+            <field name="name">Wartburg</field>
+            <field name="image" type="base64" file="car_workshop_base/static/img/brand_wartburg-image.png"/>
         </record>
         <record id="brand_iveco" model="fleet.vehicle.model.brand">
             <field name="name">Iveco</field>
