@@ -168,9 +168,11 @@
                             <img style="max-width: 90%;" src="/car_workshop_base/static/src/img/escala_medida.jpg"/>
                         </div>
                     </div>
-                    <div class="col-3 border border-dark ml-3 mr-3 pt-2">
+                    <div class="col-3 border border-dark ml-3 mr-3 p-0 pt-1">
                         <div style="font-size: xx-small;">FECHA Y HORA RECEPCIÓN CLIENTE</div>
-                        <div class="pt-2" t-field="o.create_date" t-options="{'widget': 'datetime'}"/>
+                        <div t-field="o.arrival_date" t-options="{'widget': 'datetime'}"/>
+                        <div style="font-size: xx-small;">FECHA Y HORA PREVISTA ENTREGA VEHÍCULO</div>
+                        <div t-field="o.date_deadline" t-options="{'widget': 'datetime'}"/>
                     </div>
                     <div class="col-2 border border-dark ml-3 pt-2">
                         <div style="font-size: xx-small;">FIRMA RECEPCIONISTA</div>
@@ -179,7 +181,7 @@
             </div>
             <br/>
             <div class="container">
-                <div class="row" style="height: 175px; font-size: x-small;">
+                <div class="row" style="height: 250px; font-size: x-small;">
                     <div class="col-6 p-2 border border-dark">
                         <div class="font-weight-bold border-bottom border-dark">
                             Descripción avería / Trabajo a realizar según manifestación del cliente
@@ -191,7 +193,7 @@
                             Estimación<sup>1</sup>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 pt-5">
                         <img class="d-block mx-auto" src="/car_workshop_base/static/src/img/bodywork_aprraisal.jpeg"/>
                     </div>
                 </div>
@@ -216,85 +218,62 @@
             <br/>
             <div class="row">
                 <div class="col-4">
-                    
+                    <t t-set="rows" t-value="['Placas de matrícula', 'Lunas, parabrtisas y luneta', 'Luces delantes/traseras', 'Carrocería y la pintura', 'Escobillas de limpiaparabrisas', 'Neumáticos']"/>
+                    <t t-set="theads" t-value="['Exámen alrededor del vehículo', '', 'Acuerdo cliente']"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_control_table"/>
+                    <t t-set="rows" t-value="['Pre-ITV', 'Revisión de climatización', 'Vehículo de sustitución']"/>
+                    <t t-set="theads" t-value="['Otros servicios', '', '']"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_control_table"/>
                 </div>
                 <div class="col-4">
-
+                    <t t-set="rows" t-value="['Aceite de motor', 'Líquido de refrigeración', 'Líquido de frenos', 'Líquido de dirección']"/>
+                    <t t-set="theads" t-value="['Controles bajo el capó (niveles)', '', 'Acuerdo cliente']"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_control_table"/>
+                    <t t-set="rows" t-value="['Existencia de campaña(s) de recuperación', 'Ficha de incidente cliente', 'Prueba en carretera con el cliente']"/>
+                    <t t-set="theads" t-value="['Calidad del servicio', '', '']"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_control_table"/>
                 </div>
                 <div class="col-4">
-
+                    <t t-set="rows" t-value="['Estado de estanquesidad de amortiguadores y circuito de suspensión', 'Estado de las transmisiones/rótulas', 'Estado de fijación del escape', 'Estado del circuito de frenos', 'Estanquesidad/Estado de los tubos', 'Estado de los discos y pastillas de freno']"/>
+                    <t t-set="theads" t-value="['Controles exhaustivos (en elevador) a partir de 50.000 km.)', '', 'Acuerdo cliente']"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_control_table"/>
                 </div>
             </div>
             <br/>
-            <br/>
         </template>
 
-        <template id="template_id" name="template_name">
-            <table class="control_table text-center">
+        <template id="report_vehiclereportorder_control_table">
+            <table class="control_table">
                 <thead>
                     <tr>
-                        <th style="width: 70%;">Examen alrededor del vehículo</th>
-                        <th style="width: 5%;"></th>
-                        <th style="width: 25%;">Acuerdo cliente</th>
+                        <th style="width: 70%;">
+                            <t t-esc="theads[0]"/>
+                        </th>
+                        <th style="width: 5%;">
+                            <t t-esc="theads[1]"/>
+                        </th>
+                        <th  class="text-center" style="width: 25%;">
+                            <t t-esc="theads[2]"/>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Placas de matrícula</td>
-                        <td>
-                            <i class="fa fa-square-o"/>
-                        </td>
-                        <td>
-                            <i class="fa fa-square-o"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Lunas, parabrtisas y luneta</td>
-                        <td>
-                            <i class="fa fa-square-o"/>
-                        </td>
-                        <td>
-                            <i class="fa fa-square-o"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Luces delantes/traseras</td>
-                        <td>
-                            <i class="fa fa-square-o"/>
-                        </td>
-                        <td>
-                            <i class="fa fa-square-o"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Carrocería y la pintura</td>
-                        <td>
-                            <i class="fa fa-square-o"/>
-                        </td>
-                        <td>
-                            <i class="fa fa-square-o"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Escobillas de limpiaparabrisas</td>
-                        <td>
-                            <i class="fa fa-square-o"/>
-                        </td>
-                        <td>
-                            <i class="fa fa-square-o"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Neumáticos</td>
-                        <td>
-                            <i class="fa fa-square-o"/>
-                        </td>
-                        <td>
-                            <i class="fa fa-square-o"/>
-                        </td>
-                    </tr>
+                    <t t-foreach="rows" t-as="row">
+                        <tr>
+                            <td>
+                                <t t-esc="row"/>
+                            </td>
+                            <td class="text-center">
+                                <i class="fa fa-square-o"/>
+                            </td>
+                            <td class="text-center">
+                                <i class="fa fa-square-o"/>
+                            </td>
+                        </tr>
+                    </t>
                 </tbody>
             </table>
+            <br/>
         </template>
 
         <template id="report_vehiclereportorder_legal_info">
@@ -328,7 +307,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row text-center" style="height: 70px">
+                <div class="row text-center" style="height: 100px">
                     <div class="col-7 border-right border-dark pt-1">
                         <small>
                             <b>Firma</b> del cliente <b>(*)</b> Exprese de puño y letra "<b>RENUNCIO AL PRESUPUESTO</b>"
@@ -358,11 +337,11 @@
         <template id="fault_table">
             <table id="table_fault_table">
                 <thead>
-                    <tr>
+                    <tr class="text-center">
                         <th style="width: 10%;">Avería</th>
                         <th style="width: 10%;">Cantidad</th>
                         <th style="width: 50%;">Designación</th>
-                        <th style="width: 30%;">Nº de bono / referencia</th>
+                        <th style="width: 30%;">Mano de obra</th>
                     </tr>
                 </thead>
                 <tbody>

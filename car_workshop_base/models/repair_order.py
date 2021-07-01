@@ -3,6 +3,7 @@
 ###############################################################################
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+from datetime import datetime, timedelta
 
 
 class RepairOrder(models.Model):
@@ -11,7 +12,7 @@ class RepairOrder(models.Model):
     arrival_date = fields.Datetime(
         string='Arrival Date',
         required=True,
-        help='The arrival date of the vehicle.',
+        help='The arrival date of the repair order.',
     )
     child_ids = fields.One2many(
         comodel_name='repair.order',
@@ -22,6 +23,11 @@ class RepairOrder(models.Model):
         relation='res.currency',
         related='company_id.currency_id',
         string='Currency',
+    )
+    date_deadline = fields.Datetime(
+        string='Date Deadline',
+        help='The deadline date of the vehicle.',
+        default=lambda self: datetime.now() + timedelta(days=2),
     )
     fuel = fields.Integer(
         string='Fuel (%)',
@@ -51,7 +57,7 @@ class RepairOrder(models.Model):
     parent_id = fields.Many2one(
         comodel_name='repair.order',
         domain='[(\'id\', \'!=\', active_id)]',
-        string='OR Parent',
+        string='RO Parent',
     )
     product_qty = fields.Float(
         default=1.0,
