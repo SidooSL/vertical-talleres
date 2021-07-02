@@ -33,6 +33,8 @@
     'data': [
         'data/brand_data.xml',
         'security/car_workshop_security.xml',
+        'report/repair_reports.xml',
+        'report/repair_templates_vehicle_repair_order.xml',
         'views/car_workshop_menu_views.xml',
         'views/fleet_vehicle.xml',
         'views/product_template.xml',

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_vehiclerepairorder_main_info">
+            <h5>
+                <span>ORDEN DE REPARACIÓN #:</span>
+                <span t-field="o.name"/>
+            </h5>
+            <h6>
+                <t t-if="receiver">
+                    Resguardo de depósito - 
+                    <small>
+                        Ejemplar para el <span t-esc="receiver"/>
+                    </small>
+                </t>
+                <t t-else="">
+                    Control interno taller
+                </t>
+            </h6>
+            <br/>
+            <div class="row">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-4 font-weight-bold">
+                            Nombre:
+                        </div>
+                        <div class="border-bottom border-dark col-8">
+                            <span t-field="o.partner_id.name"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 font-weight-bold">
+                            Dirección:
+                        </div>
+                        <div class="border-bottom border-dark col-8">
+                            <span t-field="o.partner_id.street"/>
+                            <span t-field="o.partner_id.zip"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                        </div>
+                        <div class="border-bottom border-dark col-8">
+                            <span t-field="o.partner_id.city"/>
+                            <span t-field="o.partner_id.state_id"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5 font-weight-bold">
+                            Telf. (Fijo/Móvil):
+                        </div>
+                        <div class="border-bottom border-dark col-7">
+                            <t t-if="o.partner_id.phone">
+                                <span t-field="o.partner_id.phone"/>
+                            </t>
+                            <t t-elif="o.partner_id.mobile">
+                                <span t-field="o.partner_id.mobile"/>
+                            </t>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 font-weight-bold">
+                            E-Mail:
+                        </div>
+                        <div class="border-bottom border-dark col-8">
+                            <span t-field="o.partner_id.email"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 font-weight-bold">
+                            CIF/DNI:
+                        </div>
+                        <div class="border-bottom border-dark col-8">
+                            <span t-field="o.partner_id.vat"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 font-weight-bold">
+                            Fecha orden de reparación:
+                        </div>
+                        <div class="border-bottom border-dark col-6">
+                            <span t-field="o.create_date" t-options="{'widget': 'date'}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6" style="padding-right: 27px;">
+                    <div class="row">
+                        <div class="col-4 font-weight-bold">
+                            Matrícula:
+                        </div>
+                        <div class="border-bottom border-dark col-8">
+                            <span t-field="o.vehicle_id.license_plate"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 font-weight-bold">
+                            Odómetro:
+                        </div>
+                        <div class="border-bottom border-dark col-8">
+                            <span t-field="o.vehicle_id.odometer"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 font-weight-bold">
+                            Nº de VIN:
+                        </div>
+                        <div class="border-bottom border-dark col-8">
+                            <span t-field="o.vehicle_id.vin_sn"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5 font-weight-bold">
+                            Fecha próxima ITV:
+                        </div>
+                        <div class="border-bottom border-dark col-7">
+                            <span t-field="o.vehicle_id.next_mot"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 font-weight-bold">
+                            Modelo:
+                        </div>
+                        <div class="border-bottom border-dark col-8">
+                            <span t-field="o.vehicle_id.model_id"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 font-weight-bold">
+                            Versión:
+                        </div>
+                        <div class="border-bottom border-dark col-8">
+                            <span t-field="o.vehicle_id.model_version"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 font-weight-bold">
+                            Recepcionista:
+                        </div>
+                        <div class="border-bottom border-dark col-8">
+                            <span t-field="o.create_uid.name"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="container">
+                <div class="row text-center" style="height: 70px;">
+                    <div class="col-3 border border-dark mr-3 pt-1">
+                        <div>
+                            <small>NIVEL DE CARBURANTE</small>
+                        </div>
+                        <div>
+                            <span class="float-left text-left pl-2">0</span>
+                            <span class="pl-2">50</span>
+                            <span class="float-right text-right">100</span>
+                            <img style="max-width: 90%;" src="/car_workshop_base/static/src/img/escala_medida.jpg"/>
+                        </div>
+                    </div>
+                    <div class="col-3 border border-dark mx-2 pt-1">
+                        <div>
+                            <small>ESTADO CARGA BATERÍA</small>
+                        </div>
+                        <div>
+                            <span class="float-left text-left pl-2">0</span>
+                            <span class="pl-2">50</span>
+                            <span class="float-right text-right">100</span>
+                            <img style="max-width: 90%;" src="/car_workshop_base/static/src/img/escala_medida.jpg"/>
+                        </div>
+                    </div>
+                    <div class="col-3 border border-dark ml-3 mr-3 p-0 pt-1">
+                        <div style="font-size: xx-small;">FECHA Y HORA RECEPCIÓN CLIENTE</div>
+                        <div t-field="o.arrival_date" t-options="{'widget': 'datetime'}"/>
+                        <div style="font-size: xx-small;">FECHA Y HORA PREVISTA ENTREGA VEHÍCULO</div>
+                        <div t-field="o.date_deadline" t-options="{'widget': 'datetime'}"/>
+                    </div>
+                    <div class="col-2 border border-dark ml-3 pt-2">
+                        <div style="font-size: xx-small;">FIRMA RECEPCIONISTA</div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="container">
+                <div class="row" style="height: 250px; font-size: x-small;">
+                    <div class="col-6 p-2 border border-dark">
+                        <div class="font-weight-bold border-bottom border-dark">
+                            Descripción avería / Trabajo a realizar según manifestación del cliente
+                        </div>
+                        <div class="pt-1" t-field="o.fault_notes"/>
+                    </div>
+                    <div class="col-2 text-center border-right border-top border-bottom border-dark p-2">
+                        <div class="font-weight-bold border-bottom border-dark">
+                            Estimación<sup>1</sup>
+                        </div>
+                    </div>
+                    <div class="col-4 pt-5">
+                        <img class="d-block mx-auto" src="/car_workshop_base/static/src/img/bodywork_aprraisal.jpeg"/>
+                    </div>
+                </div>
+            </div>
+            <div style="font-size: xx-small;">
+                <b>1</b> - La estimación previa es orientativa y no consituye presupuesto, si desea uno, indíqueselo al recepcionista.
+            </div>
+            <br/>
+        </template>
+
+        <template id="report_vehiclereportorder_controls">
+            <div class="row text-center">
+                <span class="col-3">
+                    <h6>
+                        <b>CONTROLES*</b>
+                    </h6>
+                </span>
+                <span class="col-9" style="font-size: xx-small;">
+                    <i>*Estos controles son observaciones visuales del estado exterior de las piezas el día del control y no implican que en ningún caso que no existan defectos no aparentes.</i>
+                </span>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-4">
+                    <t t-set="rows" t-value="['Placas de matrícula', 'Lunas, parabrtisas y luneta', 'Luces delantes/traseras', 'Carrocería y la pintura', 'Escobillas de limpiaparabrisas', 'Neumáticos']"/>
+                    <t t-set="theads" t-value="['Exámen alrededor del vehículo', '', 'Acuerdo cliente']"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_control_table"/>
+                    <t t-set="rows" t-value="['Pre-ITV', 'Revisión de climatización', 'Vehículo de sustitución']"/>
+                    <t t-set="theads" t-value="['Otros servicios', '', '']"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_control_table"/>
+                </div>
+                <div class="col-4">
+                    <t t-set="rows" t-value="['Aceite de motor', 'Líquido de refrigeración', 'Líquido de frenos', 'Líquido de dirección']"/>
+                    <t t-set="theads" t-value="['Controles bajo el capó (niveles)', '', 'Acuerdo cliente']"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_control_table"/>
+                    <t t-set="rows" t-value="['Existencia de campaña(s) de recuperación', 'Ficha de incidente cliente', 'Prueba en carretera con el cliente']"/>
+                    <t t-set="theads" t-value="['Calidad del servicio', '', '']"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_control_table"/>
+                </div>
+                <div class="col-4">
+                    <t t-set="rows" t-value="['Estado de estanquesidad de amortiguadores y circuito de suspensión', 'Estado de las transmisiones/rótulas', 'Estado de fijación del escape', 'Estado del circuito de frenos', 'Estanquesidad/Estado de los tubos', 'Estado de los discos y pastillas de freno']"/>
+                    <t t-set="theads" t-value="['Controles exhaustivos (en elevador) a partir de 50.000 km.)', '', 'Acuerdo cliente']"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_control_table"/>
+                </div>
+            </div>
+            <br/>
+        </template>
+
+        <template id="report_vehiclereportorder_control_table">
+            <table class="control_table">
+                <thead>
+                    <tr>
+                        <th style="width: 70%;">
+                            <t t-esc="theads[0]"/>
+                        </th>
+                        <th style="width: 5%;">
+                            <t t-esc="theads[1]"/>
+                        </th>
+                        <th  class="text-center" style="width: 25%;">
+                            <t t-esc="theads[2]"/>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="rows" t-as="row">
+                        <tr>
+                            <td>
+                                <t t-esc="row"/>
+                            </td>
+                            <td class="text-center">
+                                <i class="fa fa-square-o"/>
+                            </td>
+                            <td class="text-center">
+                                <i class="fa fa-square-o"/>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+            <br/>
+        </template>
+
+        <template id="report_vehiclereportorder_legal_info">
+            <div class="border border-dark">
+                <div class="border-bottom border-dark py-2">
+                    <div class="font-weight-bold pl-3">TODO USUARIO TIENE DERECHO A UN PRESUPUESTO PREVIO</div>
+                    <div class="d-inline pl-3">
+                        <i class="fa fa-square-o"/>
+                            Solicito presupuesto previo.
+                    </div>
+                    <div class="d-inline pl-5">
+                        <i class="fa fa-square-o"/>
+                            Renuncio a presupuesto previo(*)
+                    </div>
+                    <div>
+                        <div class="pl-3">
+                            <i class="fa fa-square-o"/>
+                            He leído y comprendido la información y consentimiento que presto sobre el tratamiento de mis datos personales.
+                        </div>
+                    </div>
+                    <div>
+                        <div class="pl-3">
+                            <i class="fa fa-square-o"/>
+                            Renuncio a retirar las piezas, elementos o conjuntos que hayan sido sustituidos.
+                        </div>
+                    </div>
+                    <div>
+                        <div class="pl-3">
+                            <i class="fa fa-square-o"/>
+                            Autorizo al taller para que realice los desplazamientos y pruebas necesarias con el vehículo.
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center" style="height: 100px">
+                    <div class="col-7 border-right border-dark pt-1">
+                        <small>
+                            <b>Firma</b> del cliente <b>(*)</b> Exprese de puño y letra "<b>RENUNCIO AL PRESUPUESTO</b>"
+                        </small>
+                    </div>
+                    <div class="col-5 pt-1" style="line-height: 10px;">
+                        <small>
+                            <b>CONFORME CLIENTE CON LA REPARACIÓN</b>
+                            <br/>
+                            <b>Firma</b> del cliente <b>Fecha y hora</b> de la retirada del vehículo
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="report_vehiclereportorder_fault_table">
+            <div style="height: 70px; width: 100%;">
+                <div class="float-right border border-dark text-center" style="height: 70px; width: 210px;">
+                    FIRMA JEFE TALLER
+                </div>
+            </div>
+            <br/>
+            <t t-call="car_workshop_base.fault_table"/>
+        </template>
+
+        <template id="fault_table">
+            <table id="table_fault_table">
+                <thead>
+                    <tr class="text-center">
+                        <th style="width: 10%;">Avería</th>
+                        <th style="width: 10%;">Cantidad</th>
+                        <th style="width: 50%;">Designación</th>
+                        <th style="width: 30%;">Mano de obra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]" t-as="n">
+                        <t t-call="car_workshop_base.fault_table_empty_rows"/>
+                    </t>
+                </tbody>
+            </table>
+        </template>
+        <template id="fault_table_empty_rows">
+            <tr>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>&#160;</td>
+                <td>&#160;</td>
+            </tr>
+        </template>
+
+        <template id="report_vehiclerepairorder">
+            <t t-set="o" t-value="doc"/>
+            <t t-call="web.external_layout">
+                <link href="/car_workshop_base/static/src/css/main.css" rel="stylesheet"/>
+                <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)" />
+                <div class="page" style="page-break-after: always;">
+                    <t t-set="receiver">cliente</t>
+                    <t t-call="car_workshop_base.report_vehiclerepairorder_main_info"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_controls"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_legal_info"/>
+                </div>
+                <div class="page" style="page-break-after: always;">
+                    <t t-set="receiver">taller</t>
+                    <t t-call="car_workshop_base.report_vehiclerepairorder_main_info"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_controls"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_legal_info"/>
+                </div>
+                <div class="page">
+                    <t t-set="receiver"/>
+                    <t t-call="car_workshop_base.report_vehiclerepairorder_main_info"/>
+                    <t t-call="car_workshop_base.report_vehiclereportorder_fault_table"/>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_vehiclerepairorder2">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="car_workshop_base.report_vehiclerepairorder" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

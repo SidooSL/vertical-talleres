@@ -6,14 +6,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 10:10+0000\n"
-"PO-Revision-Date: 2021-06-14 10:10+0000\n"
+"POT-Creation-Date: 2021-07-02 09:02+0000\n"
+"PO-Revision-Date: 2021-07-02 09:02+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: car_workshop_base
+#: code:addons/car_workshop_base/models/repair_order.py:116
+#, python-format
+msgid " The last odometer (%s) cannot be greater than the new\n"
+"             one (%s).\n"
+" %s >> %s "
+msgstr " El último kilometraje (%s) no puede ser mayor que el\n"
+"             nuevo (%s).\n"
+" %s >> %s "
+
+#. module: car_workshop_base
+#: model_terms:ir.ui.view,arch_db:car_workshop_base.view_repair_order_form
+msgid "<span class=\"o_stat_text\">SubOrds</span>"
+msgstr "<span class=\"o_stat_text\">Sub-órdenes</span>"
 
 #. module: car_workshop_base
 #: model_terms:ir.ui.view,arch_db:car_workshop_base.view_partner_form
@@ -24,6 +39,16 @@ msgstr "<span class=\"o_stat_text\">Vehículos</span>"
 #: selection:repair.order,invoice_method:0
 msgid "After Repair"
 msgstr "Después de la reparación"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__arrival_date
+msgid "Arrival Date"
+msgstr "Fecha de entrada"
+
+#. module: car_workshop_base
+#: model_terms:ir.ui.view,arch_db:car_workshop_base.view_repair_order_form
+msgid "Attended by"
+msgstr "Atendido por"
 
 #. module: car_workshop_base
 #: model:ir.ui.menu,name:car_workshop_base.menu_catalog_variants_action
@@ -46,14 +71,24 @@ msgid "Chassis Number"
 msgstr "Número de bastidor"
 
 #. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__child_ids
+msgid "Child"
+msgstr "Sub-OR"
+
+#. module: car_workshop_base
 #: model:ir.ui.menu,name:car_workshop_base.menu_sales_configuration
 msgid "Configuration"
 msgstr "Configuración"
 
 #. module: car_workshop_base
-#: model:ir.model,name:car_workshop_base.model_res_partner
-msgid "Contact"
-msgstr "Contacto"
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__company_currency
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__date_deadline
+msgid "Date Deadline"
+msgstr "Fecha prevista de entrega"
 
 #. module: car_workshop_base
 #: model:ir.model.fields,help:car_workshop_base.field_fleet_vehicle__acquisition_date
@@ -70,20 +105,31 @@ msgstr "Conductor"
 msgid "Driver of the vehicle"
 msgstr "Conductor del vehículo"
 
-#. module: fleet
-#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__horsepower
-msgid "Horsepower"
-msgstr "Cilindrada (C.C.)"
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__planned_revenue
+msgid "Expected Revenue"
+msgstr "Estimación"
 
-#. module: fleet
-#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__horsepower_tax
-msgid "Horsepower Taxation"
-msgstr "Caballos / CV"
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__fault_notes
+#: model_terms:ir.ui.view,arch_db:car_workshop_base.view_repair_order_form
+msgid "Fault Notes"
+msgstr "Descripción averías"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__fuel
+msgid "Fuel (%)"
+msgstr "Combustible (%)"
 
 #. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__acquisition_date
 msgid "Immatriculation Date"
 msgstr "Fecha de registro"
+
+#. module: car_workshop_base
+#: model_terms:ir.ui.view,arch_db:car_workshop_base.view_repair_order_form
+msgid "Internal Notes"
+msgstr "Notas internas"
 
 #. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__invoice_method
@@ -96,9 +142,25 @@ msgid "Invoice address"
 msgstr "Dirección de facturación"
 
 #. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__is_blocked_to_drive
+msgid "Is blocked to drive?"
+msgstr "¿Puede circular?"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__is_damaged
+msgid "Is damaged?"
+msgstr "¿Está dañado?"
+
+#. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__last_mot
 msgid "Last MOT"
 msgstr "Última ITV"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__odometer
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__odometer
+msgid "Last Odometer"
+msgstr "Último odómetro"
 
 #. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__license_plate
@@ -121,6 +183,11 @@ msgid "Model of a vehicle"
 msgstr "Modelo de un vehículo"
 
 #. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__new_odometer
+msgid "New Odometer"
+msgstr "Nuevo Kilometraje"
+
+#. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__next_mot
 msgid "Next MOT"
 msgstr "Siguiente ITV"
@@ -131,6 +198,17 @@ msgid "No Invoice"
 msgstr "Sin factura"
 
 #. module: car_workshop_base
+#: model:ir.model.fields,help:car_workshop_base.field_fleet_vehicle__odometer
+#: model:ir.model.fields,help:car_workshop_base.field_repair_order__odometer
+msgid "Odometer measure of the vehicle at the moment of this log"
+msgstr "Medida del odómetro del vehículo en el momento de registro"
+
+#. module: car_workshop_base
+#: model_terms:ir.ui.view,arch_db:car_workshop_base.report_vehiclerepairorder_main_info
+msgid "Odómetro:"
+msgstr "Kilometraje:"
+
+#. module: car_workshop_base
 #: selection:repair.order,repair_type:0
 msgid "Other"
 msgstr "Otro"
@@ -138,17 +216,17 @@ msgstr "Otro"
 #. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__partner_id
 msgid "Owner"
-msgstr "Titular"
-
-#. module: fleet
-#: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__power
-msgid "Power"
-msgstr "Caballos fiscales"
+msgstr "Propietario"
 
 #. module: car_workshop_base
 #: model:ir.ui.menu,name:car_workshop_base.menu_product_pricelist_main
 msgid "Pricelists"
 msgstr "Tarifas"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_line__product_id
+msgid "Product"
+msgstr "Producto"
 
 #. module: car_workshop_base
 #: model:ir.ui.menu,name:car_workshop_base.menu_product_categories
@@ -176,14 +254,34 @@ msgid "Products"
 msgstr "Productos"
 
 #. module: car_workshop_base
+#: model_terms:ir.ui.view,arch_db:car_workshop_base.view_repair_order_form
+msgid "Quotation Notes"
+msgstr "Notas del presupuesto"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__parent_id
+msgid "RO Parent"
+msgstr "Padre OR"
+
+#. module: car_workshop_base
 #: model:res.groups,name:car_workshop_base.group_renting
 msgid "Renting"
 msgstr "Alquilar"
 
 #. module: car_workshop_base
+#: model:ir.model,name:car_workshop_base.model_repair_line
+msgid "Repair Line (parts)"
+msgstr "Línea de Reparación (partes)"
+
+#. module: car_workshop_base
 #: model:ir.model,name:car_workshop_base.model_repair_order
 msgid "Repair Order"
 msgstr "Orden de reparación"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__name
+msgid "Repair Reference"
+msgstr "Referencia de reparación"
 
 #. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__repair_type
@@ -206,18 +304,38 @@ msgid "Stock"
 msgstr "Inventario"
 
 #. module: car_workshop_base
-#: code:addons/car_workshop_base/models/fleet_vehicle.py:54
+#: model:ir.actions.act_window,name:car_workshop_base.repair_order_subords_action
+msgid "SubOrds"
+msgstr "Sub-órdenes"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__subords_count
+msgid "SubOrds Count"
+msgstr "Cuenta de sub-órdenes"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,help:car_workshop_base.field_repair_order__arrival_date
+msgid "The arrival date of the vehicle."
+msgstr "La fecha de apertura del vehículo."
+
+#. module: car_workshop_base
+#: model:ir.model.fields,help:car_workshop_base.field_repair_order__date_deadline
+msgid "The deadline date of the vehicle."
+msgstr "La fecha prevista de entrega del vehículo."
+
+#. module: car_workshop_base
+#: code:addons/car_workshop_base/models/fleet_vehicle.py:57
 #, python-format
 msgid "The license plate only accepts alphanumeric caps characters."
 msgstr "La matrículo solo acepta caracteres alfanuméricos capitalizados."
 
 #. module: car_workshop_base
 #: model:res.groups,comment:car_workshop_base.group_renting
-msgid "The user can see all configuration on Car Workshop."
-msgstr "El usuario puede ver toda la configuración de Car Workshop."
+msgid "The user can see all fields on vehicle form."
+msgstr "El usuario puede ver todos los campos en el formulario del vehículo."
 
 #. module: car_workshop_base
-#: code:addons/car_workshop_base/models/fleet_vehicle.py:61
+#: code:addons/car_workshop_base/models/fleet_vehicle.py:64
 #, python-format
 msgid "The vin number needs to have 17 alphanumeric caps characters."
 msgstr "El número de bastidor necesita estar compuesto de 17 caracteres alfanuméricos capitalizados."
@@ -239,6 +357,23 @@ msgid "Vehicle Repair"
 msgstr "Reparación de vehículo"
 
 #. module: car_workshop_base
+#: model:ir.actions.report,name:car_workshop_base.action_report_vehicle_repair_order
+msgid "Vehicle Repair Order"
+msgstr "Orden de Reparación de Vehículo"
+
+#. module: car_workshop_base
 #: model:ir.actions.act_window,name:car_workshop_base.res_partner_vehicles
 msgid "Vehicles"
 msgstr "Vehículos"
+
+#. module: car_workshop_base
+#: code:addons/car_workshop_base/models/repair_order.py:123
+#, python-format
+msgid "Warning"
+msgstr "Aviso"
+
+#. module: car_workshop_base
+#: code:addons/car_workshop_base/models/repair_order.py:102
+#, python-format
+msgid "You cannot set the odometer to 0. Please, set it."
+msgstr "No puedes establecer el kilometraje a 0. Por favor, establézcalo de nuevo."

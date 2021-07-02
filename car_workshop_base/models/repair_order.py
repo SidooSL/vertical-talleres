@@ -3,6 +3,7 @@
 ###############################################################################
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+from datetime import timedelta
 
 
 class RepairOrder(models.Model):
@@ -22,6 +23,13 @@ class RepairOrder(models.Model):
         relation='res.currency',
         related='company_id.currency_id',
         string='Currency',
+    )
+    date_deadline = fields.Datetime(
+        string='Date Deadline',
+        help='The deadline date of the vehicle.',
+    )
+    fault_notes = fields.Text(
+        string='Fault Notes',
     )
     fuel = fields.Integer(
         string='Fuel (%)',
@@ -51,7 +59,7 @@ class RepairOrder(models.Model):
     parent_id = fields.Many2one(
         comodel_name='repair.order',
         domain='[(\'id\', \'!=\', active_id)]',
-        string='OR Parent',
+        string='RO Parent',
     )
     product_qty = fields.Float(
         default=1.0,
@@ -82,6 +90,11 @@ class RepairOrder(models.Model):
         res = super().create(values)
         res['name'] = self.env['ir.sequence'].next_by_code('repair.order')
         return res
+
+    @api.onchange('arrival_date')
+    def _onchange_arrival_date(self):
+        if self.arrival_date:
+            self.date_deadline = self.arrival_date + timedelta(days=2)
 
     @api.constrains('new_odometer')
     def _check_last_odometer(self):

@@ -1,0 +1,25 @@
+table {
+    width: 100% !important;
+}
+
+table td {
+    background-color: transparent !important;
+    color: black !important;
+}
+
+#table_fault_table, #table_fault_table th, #table_fault_table td {
+    border: 1px solid black !important;
+}
+
+#table_fault_table {
+    border-collapse: collapse !important;
+}
+
+.control_table th {
+    font-size: x-small !important;
+    text-transform:capitalize !important;
+}
+
+.control_table, .control_table thead, .control_table th, .control_table td {
+    border: none !important;
+}
