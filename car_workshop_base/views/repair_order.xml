@@ -84,7 +84,10 @@
                 <attribute name="attrs">{'invisible': 1}</attribute>
             </xpath>
             <xpath expr="//notebook" position="before">
-                <field name="quotation_notes"/>
+                <label class="oe_edit_only" for="fault_notes"/>
+                <field name="fault_notes" placeholder="Fault Notes"/>
+                <label class="oe_edit_only" for="quotation_notes"/>
+                <field name="quotation_notes" placeholder="Quotation Notes"/>
             </xpath>
         </field>
     </record>

@@ -28,6 +28,9 @@ class RepairOrder(models.Model):
         string='Date Deadline',
         help='The deadline date of the vehicle.',
     )
+    fault_notes = fields.Text(
+        string='Fault Notes',
+    )
     fuel = fields.Integer(
         string='Fuel (%)',
     )
