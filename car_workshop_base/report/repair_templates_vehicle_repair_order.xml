@@ -77,10 +77,10 @@
                     </div>
                     <div class="row">
                         <div class="col-6 font-weight-bold">
-                            Fecha solicitud de cita:
+                            Fecha Orden de Reparación:
                         </div>
                         <div class="border-bottom border-dark col-6">
-                            <span t-field="o.vehicle_id.acquisition_date"/>
+                            <span t-field="o.create_date"/>
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,7 @@ class RepairOrder(models.Model):
     arrival_date = fields.Datetime(
         string='Arrival Date',
         required=True,
-        help='The arrival date of the repair order.',
+        help='The arrival date of the vehicle.',
     )
     child_ids = fields.One2many(
         comodel_name='repair.order',

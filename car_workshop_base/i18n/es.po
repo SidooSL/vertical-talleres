@@ -529,8 +529,8 @@ msgstr "Telf. (Fijo/Móvil):"
 
 #. module: car_workshop_base
 #: model:ir.model.fields,help:car_workshop_base.field_repair_order__arrival_date
-msgid "The arrival date of the repair order."
-msgstr "La fecha de apertura de la orden de reparación."
+msgid "The arrival date of the vehicle."
+msgstr "La fecha de apertura del vehículo."
 
 #. module: car_workshop_base
 #: model:ir.model.fields,help:car_workshop_base.field_repair_order__date_deadline
