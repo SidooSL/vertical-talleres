@@ -3,7 +3,7 @@
 ###############################################################################
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 
 class RepairOrder(models.Model):
@@ -27,7 +27,6 @@ class RepairOrder(models.Model):
     date_deadline = fields.Datetime(
         string='Date Deadline',
         help='The deadline date of the vehicle.',
-        default=lambda self: datetime.now() + timedelta(days=2),
     )
     fuel = fields.Integer(
         string='Fuel (%)',
@@ -88,6 +87,11 @@ class RepairOrder(models.Model):
         res = super().create(values)
         res['name'] = self.env['ir.sequence'].next_by_code('repair.order')
         return res
+
+    @api.onchange('arrival_date')
+    def _onchange_arrival_date(self):
+        if self.arrival_date:
+            self.date_deadline = self.arrival_date + timedelta(days=2)
 
     @api.constrains('new_odometer')
     def _check_last_odometer(self):

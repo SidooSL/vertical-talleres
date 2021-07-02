@@ -80,7 +80,7 @@
                             Fecha Orden de Reparación:
                         </div>
                         <div class="border-bottom border-dark col-6">
-                            <span t-field="o.create_date"/>
+                            <span t-field="o.create_date" t-options="{'widget': 'date'}"/>
                         </div>
                     </div>
                 </div>
