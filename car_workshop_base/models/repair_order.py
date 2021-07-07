@@ -98,18 +98,15 @@ class RepairOrder(models.Model):
 
     @api.constrains('new_odometer')
     def _check_last_odometer(self):
-        if self.new_odometer <= 0:
+        if self.vehicle_id and self.new_odometer <= 0:
             raise ValidationError(_(
                 'You cannot set the odometer to 0. Please, set it.'))
         return True
 
     @api.onchange('new_odometer')
     def _onchange_new_odometer(self):
-        if not self.new_odometer:
-            return
-        if not self.vehicle_id:
-            return
-        if self.odometer == self.new_odometer:
+        if not self.new_odometer and not self.vehicle_id and \
+           self.odometer == self.new_odometer:
             return
         if self.odometer > self.new_odometer:
             msg = _(''' The last odometer (%s) cannot be greater than the new
@@ -130,9 +127,19 @@ class RepairOrder(models.Model):
         if self.child_ids:
             self.subords_count = len(self.child_ids)
 
+    @api.onchange('repair_type')
+    def _onchange_repair_type(self):
+        if self.repair_type == 'other':
+            self.odometer = False
+            self.last_odometer = False
+            self.fuel = False
+            self.is_blocked_to_drive = False
+            self.is_damaged = False
+
     @api.onchange('vehicle_id')
     def _onchange_vehicle_id(self):
         if self.vehicle_id:
-            self.partner_id = self.vehicle_id.partner_id
+            self.partner_id = self.vehicle_id.driver_id
+            self.partner_invoice_id = self.vehicle_id.partner_invoice_id
             self.product_id = self.vehicle_id.product_id
             self.repair_type = 'vehicle_repair'
