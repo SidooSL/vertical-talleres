@@ -11,7 +11,6 @@ class RepairOrder(models.Model):
 
     arrival_date = fields.Datetime(
         string='Arrival Date',
-        required=True,
         help='The arrival date of the vehicle.',
     )
     child_ids = fields.One2many(
@@ -105,8 +104,11 @@ class RepairOrder(models.Model):
 
     @api.onchange('new_odometer')
     def _onchange_new_odometer(self):
-        if not self.new_odometer and not self.vehicle_id and \
-           self.odometer == self.new_odometer:
+        if not self.new_odometer:
+            return
+        if not self.vehicle_id:
+            return
+        if self.odometer == self.new_odometer:
             return
         if self.odometer > self.new_odometer:
             msg = _(''' The last odometer (%s) cannot be greater than the new
@@ -127,9 +129,18 @@ class RepairOrder(models.Model):
         if self.child_ids:
             self.subords_count = len(self.child_ids)
 
+    @api.onchange('partner_id')
+    def onchange_partner_id(self):
+        super().onchange_partner_id()
+        if self.partner_id and self.vehicle_id:
+            self.partner_invoice_id = self.vehicle_id.partner_invoice_id
+
     @api.onchange('repair_type')
     def _onchange_repair_type(self):
         if self.repair_type == 'other':
+            self.vehicle_id = False
+            self.arrival_date = False
+            self.date_deadline = False
             self.odometer = False
             self.last_odometer = False
             self.fuel = False
@@ -140,6 +151,5 @@ class RepairOrder(models.Model):
     def _onchange_vehicle_id(self):
         if self.vehicle_id:
             self.partner_id = self.vehicle_id.driver_id
-            self.partner_invoice_id = self.vehicle_id.partner_invoice_id
             self.product_id = self.vehicle_id.product_id
             self.repair_type = 'vehicle_repair'
