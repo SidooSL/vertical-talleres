@@ -15,7 +15,6 @@
                 <field name="next_mot"/>
             </field>
             <field name="driver_id" position="after">
-                <field name="partner_id"/>
                 <field name="partner_invoice_id"/>
             </field>
             <xpath expr="//field[@name='power']/.." position="after">

@@ -12,12 +12,8 @@ class FleetVehicle(models.Model):
     acquisition_date = fields.Date(
         required=True,
     )
-    partner_id = fields.Many2one(
-        comodel_name='res.partner',
-        string='Owner',
-        required=True,
-    )
     driver_id = fields.Many2one(
+        string='Owner',
         required=True,
     )
     last_mot = fields.Date(

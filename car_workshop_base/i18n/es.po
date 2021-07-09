@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-02 09:02+0000\n"
-"PO-Revision-Date: 2021-07-02 09:02+0000\n"
+"POT-Creation-Date: 2021-07-08 11:13+0000\n"
+"PO-Revision-Date: 2021-07-08 11:13+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: car_workshop_base
-#: code:addons/car_workshop_base/models/repair_order.py:116
+#: code:addons/car_workshop_base/models/repair_order.py:115
 #, python-format
 msgid " The last odometer (%s) cannot be greater than the new\n"
 "             one (%s).\n"
@@ -94,11 +94,6 @@ msgstr "Fecha prevista de entrega"
 #: model:ir.model.fields,help:car_workshop_base.field_fleet_vehicle__acquisition_date
 msgid "Date when the vehicle has been immatriculated"
 msgstr "Fecha en la que el vehículo ha sido registrado"
-
-#. module: car_workshop_base
-#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__driver_id
-msgid "Driver"
-msgstr "Conductor"
 
 #. module: car_workshop_base
 #: model:ir.model.fields,help:car_workshop_base.field_fleet_vehicle__driver_id
@@ -214,7 +209,7 @@ msgid "Other"
 msgstr "Otro"
 
 #. module: car_workshop_base
-#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__partner_id
+#: model:ir.model.fields,field_description:car_workshop_base.field_fleet_vehicle__driver_id
 msgid "Owner"
 msgstr "Propietario"
 
@@ -324,7 +319,7 @@ msgid "The deadline date of the vehicle."
 msgstr "La fecha prevista de entrega del vehículo."
 
 #. module: car_workshop_base
-#: code:addons/car_workshop_base/models/fleet_vehicle.py:57
+#: code:addons/car_workshop_base/models/fleet_vehicle.py:53
 #, python-format
 msgid "The license plate only accepts alphanumeric caps characters."
 msgstr "La matrículo solo acepta caracteres alfanuméricos capitalizados."
@@ -335,7 +330,7 @@ msgid "The user can see all fields on vehicle form."
 msgstr "El usuario puede ver todos los campos en el formulario del vehículo."
 
 #. module: car_workshop_base
-#: code:addons/car_workshop_base/models/fleet_vehicle.py:64
+#: code:addons/car_workshop_base/models/fleet_vehicle.py:60
 #, python-format
 msgid "The vin number needs to have 17 alphanumeric caps characters."
 msgstr "El número de bastidor necesita estar compuesto de 17 caracteres alfanuméricos capitalizados."
@@ -367,13 +362,13 @@ msgid "Vehicles"
 msgstr "Vehículos"
 
 #. module: car_workshop_base
-#: code:addons/car_workshop_base/models/repair_order.py:123
+#: code:addons/car_workshop_base/models/repair_order.py:122
 #, python-format
 msgid "Warning"
 msgstr "Aviso"
 
 #. module: car_workshop_base
-#: code:addons/car_workshop_base/models/repair_order.py:102
+#: code:addons/car_workshop_base/models/repair_order.py:101
 #, python-format
 msgid "You cannot set the odometer to 0. Please, set it."
 msgstr "No puedes establecer el kilometraje a 0. Por favor, establézcalo de nuevo."
