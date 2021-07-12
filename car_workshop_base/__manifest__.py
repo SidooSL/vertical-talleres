@@ -38,6 +38,7 @@
         'views/car_workshop_menu_views.xml',
         'views/fleet_vehicle.xml',
         'views/product_template.xml',
+        'views/repair_lines_report.xml',
         'views/repair_order.xml',
         'views/res_partner.xml',
     ],

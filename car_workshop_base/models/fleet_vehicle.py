@@ -99,3 +99,12 @@ class FleetVehicle(models.Model):
             'qty_done': 1.0,
         })
         return rec
+
+    def button_vehicle_repair_lines_report(self):
+        return{
+            'name': _('Operations & Fees'),
+            'view_mode': 'tree',
+            'res_model': 'repair.lines.report',
+            'type': 'ir.actions.act_window',
+            'domain': [('repair_id', 'in', self.repair_ids.ids)],
+        }
