@@ -1,8 +1,3 @@
-muk_base git@github.com:SDIsl/muk_base.git
-muk_dms git@github.com:SDIsl/muk_dms.git
-muk_web git@github.com:SDIsl/muk_web.git
-sdi-addons git@github.com:SDIsl/sdi-addons.git
-talleres-addons git@github.com:SDIsl/talleres-addons.git
 dms
 event
 helpdesk
