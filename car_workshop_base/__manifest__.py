@@ -25,7 +25,7 @@
     'website': 'https://sdi.es/odoo/',
     'license': 'AGPL-3',
     'category': 'Workshop',
-    'version': '12.0.1.0.0',
+    'version': '14.0.1.0.0',
     'depends': [
         'fleet',
         'repair',
@@ -40,9 +40,6 @@
         'views/product_template.xml',
         'views/repair_order.xml',
         'views/res_partner.xml',
-    ],
-    'demo': [
-        'data/products_demo.xml',
     ],
     'application': True,
 }

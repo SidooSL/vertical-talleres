@@ -19,7 +19,6 @@ class RepairOrder(models.Model):
     )
     company_currency = fields.Many2one(
         readonly=True,
-        relation='res.currency',
         related='company_id.currency_id',
         string='Currency',
     )
@@ -53,7 +52,7 @@ class RepairOrder(models.Model):
     new_odometer = fields.Float(
         default=False,
         string='New Odometer',
-        track_visibility='onchange',
+        tracking=True,
     )
     parent_id = fields.Many2one(
         comodel_name='repair.order',
@@ -126,8 +125,8 @@ class RepairOrder(models.Model):
 
     @api.depends('child_ids')
     def _compute_subords_count(self):
-        if self.child_ids:
-            self.subords_count = len(self.child_ids)
+        for order in self:
+            order.subords_count = len(order.child_ids)
 
     @api.onchange('partner_id')
     def onchange_partner_id(self):

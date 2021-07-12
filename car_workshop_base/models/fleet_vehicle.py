@@ -23,7 +23,7 @@ class FleetVehicle(models.Model):
         required=True,
     )
     odometer = fields.Float(
-        track_visibility='always',
+        tracking=True,
     )
     product_id = fields.Many2one(
         comodel_name='product.product',
@@ -46,14 +46,12 @@ class FleetVehicle(models.Model):
         required=True,
     )
 
-    @api.one
     @api.constrains('license_plate')
     def _check_license_plate(self):
         if not re.fullmatch('[0-9A-Z]+', self.license_plate):
             raise ValidationError(_('The license plate only accepts'
                                     ' alphanumeric caps characters.'))
 
-    @api.one
     @api.constrains('vin_sn')
     def _check_vin_sn(self):
         if not re.fullmatch('[0-9A-Z]{17}', self.vin_sn):

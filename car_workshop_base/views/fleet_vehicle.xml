@@ -56,12 +56,12 @@
             <xpath expr="//field[@name='contract_count']/.." position="attributes">
                 <attribute name="groups">car_workshop_base.group_renting</attribute>
             </xpath>
-            <button name="act_show_log_cost" position="attributes">
-                <attribute name="groups">car_workshop_base.group_renting</attribute>
-            </button>
-            <xpath expr="//field[@name='fuel_logs_count']/.." position="attributes">
+            <xpath expr="//button[field[@name='service_count']]" position="attributes">
                 <attribute name="groups">car_workshop_base.group_renting</attribute>
             </xpath>
+            <!-- <xpath expr="//field[@name='fuel_logs_count']/.." position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </xpath> -->
         </field>
     </record>
 </odoo>
