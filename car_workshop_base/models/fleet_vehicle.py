@@ -80,7 +80,7 @@ class FleetVehicle(models.Model):
         })
         rec.product_id = product
         move = self.env['stock.move'].create({
-            'location_id': self.env.ref('stock.location_inventory').id,
+            'location_id': self.env.company.internal_transit_location_id.id,
             'location_dest_id': self.env.ref('stock.stock_location_stock').id,
             'name': ''.join(('INV: ', product.display_name)),
             'product_id': product.id,

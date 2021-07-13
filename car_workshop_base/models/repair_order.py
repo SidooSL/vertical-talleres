@@ -95,7 +95,7 @@ class RepairOrder(models.Model):
             self.date_deadline = self.arrival_date + timedelta(days=2)
 
     @api.constrains('new_odometer')
-    def _check_last_odometer(self):
+    def _check_new_odometer(self):
         if self.vehicle_id and self.new_odometer <= 0:
             raise ValidationError(_(
                 'You cannot set the odometer to 0. Please, set it.'))
@@ -141,7 +141,7 @@ class RepairOrder(models.Model):
             self.arrival_date = False
             self.date_deadline = False
             self.odometer = False
-            self.last_odometer = False
+            self.new_odometer = False
             self.fuel = False
             self.is_blocked_to_drive = False
             self.is_damaged = False
