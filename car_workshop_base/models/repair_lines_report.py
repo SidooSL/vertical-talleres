@@ -8,6 +8,7 @@ from odoo.addons import decimal_precision as dp
 class RepairLinesReport(models.Model):
     _name = 'repair.lines.report'
     _description = 'Repair Lines and Fees Report'
+    _order = 'repair_id'
     _auto = False
 
     name = fields.Text(
@@ -55,11 +56,6 @@ class RepairLinesReport(models.Model):
         digits=0,
         readonly=True,
     )
-    tax_id = fields.Many2one(
-        comodel_name='account.tax',
-        string='Taxes',
-        readonly=True,
-    )
     lot_id = fields.Many2one(
         comodel_name='stock.production.lot',
         string='Lot/Serial',
@@ -70,6 +66,7 @@ class RepairLinesReport(models.Model):
         with_ = ('WITH %s' % with_clause) if with_clause else ''
 
         rl_select_ = '''
+            rl.id as id,
             'line' as repair_type,
             rl.name as name,
             rl.product_id as product_id,
@@ -78,11 +75,11 @@ class RepairLinesReport(models.Model):
             rl.lot_id as lot_id,
             rl.product_uom_qty as product_uom_qty,
             rl.price_unit as price_unit,
-            0 as tax_id,
             rl.price_subtotal as price_subtotal
         '''
 
         rf_select_ = '''
+            -rf.id as id,
             'fee' as repair_type,
             rf.name as name,
             rf.product_id as product_id,
@@ -91,7 +88,6 @@ class RepairLinesReport(models.Model):
             0 as lot_id,
             rf.product_uom_qty as product_uom_qty,
             rf.price_unit as price_unit,
-            0 as tax_id,
             rf.price_subtotal as price_subtotal
         '''
 

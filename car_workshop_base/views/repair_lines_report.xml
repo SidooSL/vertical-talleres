@@ -3,14 +3,13 @@
     <record id="repair_lines_report_view_tree" model="ir.ui.view">
         <field name="model">repair.lines.report</field>
         <field name="arch" type="xml">
-            <tree create="False" edit="False" delete="False">
+            <tree>
                 <field name="repair_id"/>
                 <field name="repair_type"/>
                 <field name="name"/>
                 <field name="product_id"/>
                 <field name="product_uom_qty"/>
                 <field name="price_unit"/>
-                <field name="tax_id"/>
                 <field name="price_subtotal"/>
             </tree>
         </field>
