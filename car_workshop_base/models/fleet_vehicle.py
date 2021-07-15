@@ -42,6 +42,11 @@ class FleetVehicle(models.Model):
         string='Invoice address',
         required=True,
     )
+    repair_ids = fields.One2many(
+        comodel_name='repair.order',
+        inverse_name='vehicle_id',
+        string='Repairs',
+    )
     vin_sn = fields.Char(
         required=True,
     )
@@ -97,3 +102,12 @@ class FleetVehicle(models.Model):
             'qty_done': 1.0,
         })
         return rec
+
+    def button_vehicle_repair_lines_report(self):
+        return{
+            'name': _('Operations & Fees History'),
+            'view_mode': 'tree',
+            'res_model': 'repair.lines.report',
+            'type': 'ir.actions.act_window',
+            'domain': [('repair_id', 'in', self.repair_ids.ids)],
+        }
