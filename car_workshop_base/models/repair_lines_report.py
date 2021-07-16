@@ -1,7 +1,7 @@
 ###############################################################################
 # For copyright and license notices, see __manifest__.py file in root directory
 ###############################################################################
-from odoo import tools, api, fields, models
+from odoo import tools, fields, models
 from odoo.addons import decimal_precision as dp
 
 
@@ -95,7 +95,6 @@ class RepairLinesReport(models.Model):
                       UNION ALL SELECT %s FROM repair_fee rf)
                ''' % (with_, rl_select_, rf_select_)
 
-    @api.model_cr
     def init(self):
         tools.drop_view_if_exists(self.env.cr, self._table)
         self.env.cr.execute(
