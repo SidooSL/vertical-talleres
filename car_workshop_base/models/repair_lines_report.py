@@ -1,7 +1,7 @@
 ###############################################################################
 # For copyright and license notices, see __manifest__.py file in root directory
 ###############################################################################
-from odoo import tools, api, fields, models
+from odoo import tools, fields, models
 from odoo.addons import decimal_precision as dp
 
 
