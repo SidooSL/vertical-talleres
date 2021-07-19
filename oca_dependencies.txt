@@ -1,3 +1,7 @@
+community-data-files
+l10n-spain
+partner-contact
+web
 dms
 event
 helpdesk
@@ -10,7 +14,6 @@ server-tools
 social
 survey
 timesheet
-web
 website
 community-data-files
 account-financial-tools
@@ -20,5 +23,11 @@ reporting-engine
 account-payment
 account-reconcile
 credit-control
-contract
 stock-logistics-workflow
+bank-payment
+contract
+bank-statement-import
+edi
+connector
+queue
+project
