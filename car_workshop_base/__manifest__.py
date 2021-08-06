@@ -27,6 +27,7 @@
     'category': 'Workshop',
     'version': '14.0.1.0.0',
     'depends': [
+        'account',
         'fleet',
         'repair',
     ],
@@ -34,6 +35,7 @@
         'data/brand_data.xml',
         'security/car_workshop_security.xml',
         'security/ir.model.access.csv',
+        'report/invoice_templates.xml',
         'report/repair_reports.xml',
         'report/repair_templates_vehicle_repair_order.xml',
         'views/car_workshop_menu_views.xml',

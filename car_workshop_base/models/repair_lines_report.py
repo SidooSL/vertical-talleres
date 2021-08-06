@@ -2,7 +2,6 @@
 # For copyright and license notices, see __manifest__.py file in root directory
 ###############################################################################
 from odoo import tools, fields, models
-from odoo.addons import decimal_precision as dp
 
 
 class RepairLinesReport(models.Model):
@@ -43,12 +42,12 @@ class RepairLinesReport(models.Model):
     )
     product_uom_qty = fields.Float(
         string='Quantity',
-        digits=dp.get_precision('Product Unit of Measure'),
+        digits='Product Unit of Measure',
         readonly=True,
     )
     price_unit = fields.Float(
         string='Unit Price',
-        digits=dp.get_precision('Product Price'),
+        digits='Product Price',
         readonly=True,
     )
     price_subtotal = fields.Float(

@@ -28,6 +28,9 @@
             <xpath expr="//field[@name='power']/.." position="after">
                 <field name="horsepower" position="move"/>
             </xpath>
+            <field name="horsepower_tax" position="attributes">
+                <attribute name="widget">integer</attribute>
+            </field>
             <field name="model_year" position="attributes">
                 <attribute name="groups">car_workshop_base.group_renting</attribute>
             </field>
@@ -67,9 +70,27 @@
             <xpath expr="//button[field[@name='service_count']]" position="attributes">
                 <attribute name="groups">car_workshop_base.group_renting</attribute>
             </xpath>
-            <!-- <xpath expr="//field[@name='fuel_logs_count']/.." position="attributes">
+            <label for="future_driver_id" position="attributes">
                 <attribute name="groups">car_workshop_base.group_renting</attribute>
-            </xpath> -->
+            </label>
+            <xpath expr="//field[@name='future_driver_id']/.." position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </xpath>
+            <field name="plan_to_change_car" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </field>
+            <field name="next_assignation_date" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </field>
+            <field name="net_car_value" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </field>
+            <field name="company_id" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </field>
+            <group name="contract" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </group>
         </field>
     </record>
 </odoo>

@@ -50,6 +50,8 @@ class FleetVehicle(models.Model):
     vin_sn = fields.Char(
         required=True,
     )
+    horsepower_tax = fields.Integer()
+    power = fields.Float()
 
     @api.constrains('license_plate')
     def _check_license_plate(self):
