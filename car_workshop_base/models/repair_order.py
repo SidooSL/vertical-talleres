@@ -20,7 +20,7 @@ class RepairOrder(models.Model):
     company_currency = fields.Many2one(
         readonly=True,
         related='company_id.currency_id',
-        string='Currency',
+        string='Company Currency',
     )
     date_deadline = fields.Datetime(
         string='Date Deadline',
