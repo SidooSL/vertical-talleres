@@ -365,19 +365,19 @@
             <t t-call="web.external_layout">
                 <link href="/car_workshop_base/static/src/css/main.css" rel="stylesheet"/>
                 <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)" />
-                <div class="page" style="page-break-after: always;">
+                <div class="page" style="page-break-after: always; font-size: 11.4711px !important; font-family:'Dejavu Sans';">
                     <t t-set="receiver">cliente</t>
                     <t t-call="car_workshop_base.report_vehiclerepairorder_main_info"/>
                     <t t-call="car_workshop_base.report_vehiclereportorder_controls"/>
                     <t t-call="car_workshop_base.report_vehiclereportorder_legal_info"/>
                 </div>
-                <div class="page" style="page-break-after: always;">
+                <div class="page" style="page-break-after: always; font-size: 11.4711px !important; font-family:'Dejavu Sans';">
                     <t t-set="receiver">taller</t>
                     <t t-call="car_workshop_base.report_vehiclerepairorder_main_info"/>
                     <t t-call="car_workshop_base.report_vehiclereportorder_controls"/>
                     <t t-call="car_workshop_base.report_vehiclereportorder_legal_info"/>
                 </div>
-                <div class="page">
+                <div class="page" style="font-size: 11.4711px !important; font-family:'Dejavu Sans';">
                     <t t-set="receiver"/>
                     <t t-call="car_workshop_base.report_vehiclerepairorder_main_info"/>
                     <t t-call="car_workshop_base.report_vehiclereportorder_fault_table"/>
