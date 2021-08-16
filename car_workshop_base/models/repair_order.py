@@ -3,12 +3,23 @@
 ###############################################################################
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
-from datetime import timedelta
+from datetime import datetime, timedelta
 
 
 class RepairOrder(models.Model):
     _inherit = 'repair.order'
 
+    def _default_validity_date(self):
+        if self.env['ir.config_parameter'].sudo().get_param(
+                'sale.use_quotation_validity_days'):
+            days = self.env.company.quotation_validity_days
+            if days > 0:
+                return fields.Date.to_string(datetime.now() + timedelta(days))
+        return False
+
+    address_id = fields.Many2one(
+        help='Who picks it up? Who should it be sent to?',
+    )
     arrival_date = fields.Datetime(
         string='Arrival Date',
         help='The arrival date of the vehicle.',
@@ -59,6 +70,9 @@ class RepairOrder(models.Model):
         domain='[(\'id\', \'!=\', active_id)]',
         string='RO Parent',
     )
+    partner_id = fields.Many2one(
+        help='Customer to whom the repair is opened',
+    )
     product_qty = fields.Float(
         default=1.0,
     )
@@ -77,6 +91,11 @@ class RepairOrder(models.Model):
     subords_count = fields.Integer(
         string='SubOrds Count',
         compute='_compute_subords_count',
+    )
+    validity_date = fields.Date(
+        string='Expiration',
+        copy=False,
+        default=_default_validity_date,
     )
     vehicle_id = fields.Many2one(
         comodel_name='fleet.vehicle',
@@ -133,6 +152,7 @@ class RepairOrder(models.Model):
         super().onchange_partner_id()
         if self.partner_id and self.vehicle_id:
             self.partner_invoice_id = self.vehicle_id.partner_invoice_id
+            self.address_id = False
 
     @api.onchange('repair_type')
     def _onchange_repair_type(self):

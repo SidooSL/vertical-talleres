@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <template id="report_repairorder_inherit_car_workshop_base" inherit_id="repair.report_repairorder">
+            <xpath expr="//t[@t-set='information_block']/strong" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </xpath>
+            <xpath expr="//t[@t-set='information_block']/t" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </xpath>
+            <xpath expr="//t[@t-set='address']/div" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </xpath>
+            <xpath expr="//div[@id='informations']/div[2]" position="attributes">
+                <attribute name="groups">car_workshop_base.group_renting</attribute>
+            </xpath>
+            <xpath expr="//div[@id='informations']/div[2]" position="after">
+                <div class="col-auto col-3 mw-100 mb-2" name="expiration_date">
+                    <strong>Expiration:</strong>
+                    <p class="m-0" t-field="o.validity_date"/>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>
