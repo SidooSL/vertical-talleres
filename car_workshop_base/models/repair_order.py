@@ -71,7 +71,7 @@ class RepairOrder(models.Model):
         string='RO Parent',
     )
     partner_id = fields.Many2one(
-        help='Customer to whom the repair is opened',
+        help='Customer to whom the repair is opened.',
     )
     product_qty = fields.Float(
         default=1.0,

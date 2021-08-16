@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-06 08:16+0000\n"
-"PO-Revision-Date: 2021-08-06 08:16+0000\n"
+"POT-Creation-Date: 2021-08-16 10:48+0000\n"
+"PO-Revision-Date: 2021-08-16 10:48+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -45,6 +45,11 @@ msgstr "<span class=\"o_stat_text\">Sub-órdenes</span>"
 #: model_terms:ir.ui.view,arch_db:car_workshop_base.view_partner_form
 msgid "<span class=\"o_stat_text\">Vehicles</span>"
 msgstr "<span class=\"o_stat_text\">Vehículos</span>"
+
+#. module: car_workshop_base
+#: model_terms:ir.ui.view,arch_db:car_workshop_base.report_repairorder_inherit_car_workshop_base
+msgid "<strong>Expiration:</strong>"
+msgstr "<strong>Expiración:</strong>"
 
 #. module: car_workshop_base
 #: model:ir.model.fields.selection,name:car_workshop_base.selection__repair_lines_report__type__add
@@ -87,6 +92,16 @@ msgid "Configuration"
 msgstr "Configuración"
 
 #. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,help:car_workshop_base.field_repair_order__partner_id
+msgid "Customer to whom the repair is opened."
+msgstr "Cliente al que se le abre la reparación."
+
+#. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__date_deadline
 msgid "Date Deadline"
 msgstr "Fecha prevista de entrega"
@@ -120,6 +135,11 @@ msgstr "Conductor del vehículo"
 #: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__planned_revenue
 msgid "Expected Revenue"
 msgstr "Estimación"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__validity_date
+msgid "Expiration"
+msgstr "Expiración"
 
 #. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__fault_notes
@@ -484,6 +504,11 @@ msgstr "Vehículos"
 #, python-format
 msgid "Warning"
 msgstr "Aviso"
+
+#. module: car_workshop_base
+#: model:ir.model.fields,help:car_workshop_base.field_repair_order__address_id
+msgid "Who picks it up? Who should it be sent to?"
+msgstr "¿Quién lo recoge? ¿A quién hay que enviarlo?"
 
 #. module: car_workshop_base
 #: code:addons/car_workshop_base/models/repair_order.py:0
