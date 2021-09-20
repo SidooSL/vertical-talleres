@@ -2,7 +2,6 @@
 <odoo>
     <data noupdate="1">
         <record id="action_report_vehicle_repair_order" model="repair.order">
-            <field name="string">Vehicle Repair Order</field>
             <field name="name">car_workshop_base.report_vehiclerepairorder2</field>
             <field name="file">car_workshop_base.report_vehiclerepairorder</field>
             <field name="report_type">qweb-pdf</field>
