@@ -9,6 +9,12 @@ import re
 class FleetVehicle(models.Model):
     _inherit = 'fleet.vehicle'
 
+    _sql_constraints = [(
+        'license_plate_uniq',
+        'unique(license_plate)',
+        _('That license plate already exists!, please enter a different one.')
+    )]
+
     acquisition_date = fields.Date(
         required=True,
     )

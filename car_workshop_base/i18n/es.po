@@ -427,6 +427,13 @@ msgid "SubOrds Count"
 msgstr "Cuenta de sub-órdenes"
 
 #. module: car_workshop_base
+#: code:addons/car_workshop_base/models/fleet_vehicle.py:0
+#: model:ir.model.constraint,message:car_workshop_base.constraint_fleet_vehicle_license_plate_uniq
+#, python-format
+msgid "That license plate already exists!, please enter a different one."
+msgstr "¡Esa matrícula ya existe!, por favor ingrese una diferente."
+
+#. module: car_workshop_base
 #: model:ir.model.fields,help:car_workshop_base.field_repair_order__arrival_date
 msgid "The arrival date of the vehicle."
 msgstr "La fecha de apertura del vehículo."
