@@ -5,6 +5,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="repair_id"/>
+                <field name="date"/>
                 <field name="repair_type"/>
                 <field name="name"/>
                 <field name="product_id"/>

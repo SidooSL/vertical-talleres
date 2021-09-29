@@ -14,6 +14,9 @@ class RepairLinesReport(models.Model):
         string='Description',
         readonly=True,
     )
+    date = fields.Datetime(
+        related='repair_id.arrival_date',
+    )
     repair_id = fields.Many2one(
         comodel_name='repair.order',
         string='Repair Order Reference',
