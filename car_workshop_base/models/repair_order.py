@@ -23,6 +23,8 @@ class RepairOrder(models.Model):
     arrival_date = fields.Datetime(
         string='Arrival Date',
         help='The arrival date of the vehicle.',
+        required=False,
+        default=datetime.now(),
     )
     child_ids = fields.One2many(
         comodel_name='repair.order',
