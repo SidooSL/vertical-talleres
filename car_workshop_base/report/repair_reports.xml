@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
-        <record id="action_report_vehicle_repair_order" model="repair.order">
-            <field name="name">car_workshop_base.report_vehiclerepairorder2</field>
-            <field name="file">car_workshop_base.report_vehiclerepairorder</field>
+    <data>
+        <record id="action_report_vehicle_repair_order" model="ir.actions.report">
+            <field name="name">Vehicle Repair Order</field>
+            <field name="model">repair.order</field>
+            <field name="report_name">car_workshop_base.report_vehiclerepairorder2</field>
+            <field name="report_file">car_workshop_base.report_vehiclerepairorder</field>
             <field name="report_type">qweb-pdf</field>
             <field name="print_report_name">('Vehicle Repair Order - %s' % (object.name))</field>
+            <field name="binding_model_id" ref="model_repair_order"/>
+            <field name="binding_type">report</field>
         </record>
     </data>
 </odoo>

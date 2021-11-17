@@ -2,18 +2,24 @@
 # For copyright and license notices, see __manifest__.py file in root directory
 ###############################################################################
 from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
-import re
 
 
 class FleetVehicle(models.Model):
     _inherit = 'fleet.vehicle'
 
-    _sql_constraints = [(
-        'license_plate_uniq',
-        'unique(license_plate)',
-        _('That license plate already exists!, please enter a different one.')
-    )]
+    _sql_constraints = [
+        (
+            'license_plate_uniq',
+            'unique(license_plate)',
+            _('That license plate already exists!, please enter a different '
+              'one.')
+        ),
+        (
+            'vin_sn_uniq',
+            'unique(vin_sn)',
+            _('That vin already exists!, please enter a different one.')
+        )
+    ]
 
     acquisition_date = fields.Date(
         required=True,
@@ -53,23 +59,9 @@ class FleetVehicle(models.Model):
         inverse_name='vehicle_id',
         string='Repairs',
     )
-    vin_sn = fields.Char(
-        required=True,
-    )
+    vin_sn = fields.Char()
     horsepower_tax = fields.Integer()
     power = fields.Float()
-
-    @api.constrains('license_plate')
-    def _check_license_plate(self):
-        if not re.fullmatch('[0-9A-Z]+', self.license_plate):
-            raise ValidationError(_('The license plate only accepts'
-                                    ' alphanumeric caps characters.'))
-
-    @api.constrains('vin_sn')
-    def _check_vin_sn(self):
-        if not re.fullmatch('[0-9A-Z]{17}', self.vin_sn):
-            raise ValidationError(_('The vin number needs to have 17'
-                                    ' alphanumeric caps characters.'))
 
     @api.onchange('driver_id')
     def _onchange_driver_id(self):

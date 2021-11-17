@@ -40,7 +40,7 @@
             </field>
             <field name="location_id" position="before">
                 <field name="create_date"/>
-                <field name="arrival_date" attrs="{'required': [('repair_type', '=', 'vehicle_repair')], 'invisible': [('repair_type', '=', 'other')]}"/>
+                <field name="arrival_date" attrs="{'invisible': [('repair_type', '=', 'other')]}"/>
                 <field name="date_deadline" attrs="{'invisible': [('repair_type', '=', 'other')]}"/>
                 <field name="validity_date"/>
             </field>

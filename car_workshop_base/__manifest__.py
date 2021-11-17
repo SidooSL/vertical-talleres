@@ -35,7 +35,7 @@
         'data/brand_data.xml',
         'security/car_workshop_security.xml',
         'security/ir.model.access.csv',
-        # 'report/repair_reports.xml',
+        'report/repair_reports.xml',
         'report/repair_templates_vehicle_repair_order.xml',
         'report/report_repairorder.xml',
         'views/car_workshop_menu_views.xml',

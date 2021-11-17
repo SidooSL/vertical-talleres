@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 10:48+0000\n"
-"PO-Revision-Date: 2021-08-16 10:48+0000\n"
+"POT-Creation-Date: 2021-11-12 09:24+0000\n"
+"PO-Revision-Date: 2021-11-12 09:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,6 +26,11 @@ msgstr ""
 " El último kilometraje (%s) no puede ser mayor que el\n"
 "             nuevo (%s).\n"
 " %s >> %s "
+
+#. module: car_workshop_base
+#: model:ir.actions.report,print_report_name:car_workshop_base.action_report_vehicle_repair_order
+msgid "('Vehicle Repair Order - %s' % (object.name))"
+msgstr "('Orden de Reparación de Vehículo - %s' % (object.name))"
 
 #. module: car_workshop_base
 #: model_terms:ir.ui.view,arch_db:car_workshop_base.fleet_vehicle_view_form
@@ -49,7 +54,7 @@ msgstr "<span class=\"o_stat_text\">Vehículos</span>"
 #. module: car_workshop_base
 #: model_terms:ir.ui.view,arch_db:car_workshop_base.report_repairorder_inherit_car_workshop_base
 msgid "<strong>Expiration:</strong>"
-msgstr "<strong>Expiración:</strong>"
+msgstr "<strong>Válido hasta:</strong>"
 
 #. module: car_workshop_base
 #: model:ir.model.fields.selection,name:car_workshop_base.selection__repair_lines_report__type__add
@@ -57,8 +62,8 @@ msgid "Add"
 msgstr "Añadir"
 
 #. module: car_workshop_base
-#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__arrival_date
 #: model:ir.model.fields,field_description:car_workshop_base.field_repair_lines_report__date
+#: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__arrival_date
 msgid "Arrival Date"
 msgstr "Fecha de entrada"
 
@@ -140,7 +145,7 @@ msgstr "Estimación"
 #. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__validity_date
 msgid "Expiration"
-msgstr "Expiración"
+msgstr "Válido hasta"
 
 #. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_repair_order__fault_notes
@@ -435,6 +440,14 @@ msgid "That license plate already exists!, please enter a different one."
 msgstr "¡Esa matrícula ya existe!, por favor ingrese una diferente."
 
 #. module: car_workshop_base
+#: code:addons/car_workshop_base/models/fleet_vehicle.py:0
+#: model:ir.model.constraint,message:car_workshop_base.constraint_fleet_vehicle_vin_sn_uniq
+#, python-format
+msgid "That vin already exists!, please enter a different one."
+msgstr "¡Ese nº de bastidor o identificación ya existe!, por favor ingrese uno diferente."
+
+#. module: car_workshop_base
+#: model:ir.model.fields,help:car_workshop_base.field_repair_lines_report__date
 #: model:ir.model.fields,help:car_workshop_base.field_repair_order__arrival_date
 msgid "The arrival date of the vehicle."
 msgstr "La fecha de apertura del vehículo."
@@ -445,35 +458,14 @@ msgid "The deadline date of the vehicle."
 msgstr "La fecha prevista de entrega del vehículo."
 
 #. module: car_workshop_base
-#: code:addons/car_workshop_base/models/fleet_vehicle.py:0
-#, python-format
-msgid "The license plate only accepts alphanumeric caps characters."
-msgstr "La matrículo solo acepta caracteres alfanuméricos capitalizados."
-
-#. module: car_workshop_base
 #: model:res.groups,comment:car_workshop_base.group_renting
 msgid "The user can see all fields on vehicle form."
 msgstr "El usuario puede ver todos los campos en el formulario del vehículo."
 
 #. module: car_workshop_base
-#: code:addons/car_workshop_base/models/fleet_vehicle.py:0
-#, python-format
-msgid "The vin number needs to have 17 alphanumeric caps characters."
-msgstr ""
-"El número de bastidor necesita estar compuesto de 17 caracteres "
-"alfanuméricos capitalizados."
-
-#. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_repair_lines_report__type
 msgid "Type"
 msgstr "Tipo"
-
-#. module: car_workshop_base
-#: model:ir.model.fields,help:car_workshop_base.field_fleet_vehicle__vin_sn
-msgid "Unique number written on the vehicle motor (VIN/SN number)"
-msgstr ""
-"Nº único escrito en el motor del vehículo (nº de identificación del vehículo"
-" o nº de serie)"
 
 #. module: car_workshop_base
 #: model:ir.model.fields,field_description:car_workshop_base.field_repair_lines_report__price_unit
