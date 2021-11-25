@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="fleet_vehicle_view_search" model="ir.ui.view">
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_search"/>
+        <field name="arch" type="xml">
+            <field name="name" position="replace">
+                <field name="name" string="Name, License plate, Model, Version or Driver" filter_domain="['|','|','|','|',('name', 'ilike', self), ('license_plate', 'ilike', self), ('model_id', 'ilike', self), ('model_version', 'ilike', self), ('driver_id', 'ilike', self)]"/>
+            </field>         
+        </field>
+    </record>
+</odoo>
