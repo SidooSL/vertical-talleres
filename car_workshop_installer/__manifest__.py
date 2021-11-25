@@ -31,7 +31,7 @@
         'calendar',
         'contacts',
         'l10n_es',
-        'l10n_es_toponyms,
+        'l10n_es_toponyms',
         'l10n_es_partner,
         'web_responsive',
         'web_tree_many2one_clickable',
