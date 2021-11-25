@@ -59,14 +59,16 @@ class FleetVehicle(models.Model):
         inverse_name='vehicle_id',
         string='Repairs',
     )
-    vin_sn = fields.Char()
-    horsepower_tax = fields.Integer()
-    power = fields.Float()
+    odometer_unit = fields.Selection([
+        ('kilometers', 'km'),
+        ('hours', 'hours'),
+        ],
+    )
 
-    @api.onchange('driver_id')
-    def _onchange_driver_id(self):
-        if self.driver_id:
-            self.partner_invoice_id = self.driver_id
+    # @api.onchange('driver_id')
+    # def _onchange_driver_id(self):
+    #     if self.driver_id:
+    #         self.partner_invoice_id = self.driver_id
 
     @api.onchange('last_mot')
     def _onchange_last_mot(self):

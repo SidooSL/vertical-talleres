@@ -129,19 +129,20 @@ class RepairOrder(models.Model):
             return
         if self.odometer == self.new_odometer:
             return
-        if self.odometer > self.new_odometer:
+        if not self.odometer > self.new_odometer:
+            self.vehicle_id.write({'odometer': self.new_odometer})
+        else:
             msg = _(''' The last odometer (%s) cannot be greater than the new
-             one (%s).\n %s >> %s ''' % (
+             one (%s).\n %s >> %s ''') % (
                 self.odometer,
                 self.new_odometer,
                 self.odometer,
                 self.new_odometer,
-            ))
+            )
             return {'warning': {
                 'tittle': _('Warning'),
                 'message': msg
             }}
-        self.vehicle_id.write({'odometer': self.new_odometer})
 
     @api.depends('child_ids')
     def _compute_subords_count(self):

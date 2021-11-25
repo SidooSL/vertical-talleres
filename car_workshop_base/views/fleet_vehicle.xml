@@ -93,4 +93,8 @@
             </group>
         </field>
     </record>
+    <record id='fleet.fleet_vehicle_action' model='ir.actions.act_window'>
+        <field name="res_model">fleet.vehicle</field>
+        <field name="view_mode">tree,kanban,form,activity</field>
+    </record>
 </odoo>
