@@ -335,10 +335,10 @@
         </template>
 
         <template id="fault_table">
-            <table id="table_fault_table">
+            <table class="table" id="table_fault_table">
                 <thead>
                     <tr class="text-center">
-                        <th style="width: 10%;">Avería</th>
+                        <th style="width: 10%;">Referencia</th>
                         <th style="width: 10%;">Cantidad</th>
                         <th style="width: 50%;">Designación</th>
                         <th style="width: 30%;">Mano de obra</th>
@@ -353,10 +353,10 @@
         </template>
         <template id="fault_table_empty_rows">
             <tr>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
         </template>
 

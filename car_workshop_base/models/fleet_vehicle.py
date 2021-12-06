@@ -34,7 +34,7 @@ class FleetVehicle(models.Model):
     license_plate = fields.Char(
         required=True,
     )
-    odometer = fields.Float(
+    odometer = fields.Integer(
         tracking=True,
     )
     product_id = fields.Many2one(
@@ -65,10 +65,10 @@ class FleetVehicle(models.Model):
         ],
     )
 
-    # @api.onchange('driver_id')
-    # def _onchange_driver_id(self):
-    #     if self.driver_id:
-    #         self.partner_invoice_id = self.driver_id
+    @api.onchange('driver_id')
+    def _onchange_driver_id(self):
+        if self.driver_id:
+            self.partner_invoice_id = self.driver_id
 
     @api.onchange('last_mot')
     def _onchange_last_mot(self):

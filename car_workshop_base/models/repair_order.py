@@ -58,10 +58,10 @@ class RepairOrder(models.Model):
         required=False,
         default='',
     )
-    odometer = fields.Float(
+    odometer = fields.Integer(
         related='vehicle_id.odometer',
     )
-    new_odometer = fields.Float(
+    new_odometer = fields.Integer(
         default=False,
         string='New Odometer',
         tracking=True,
