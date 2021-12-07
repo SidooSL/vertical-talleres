@@ -23,7 +23,7 @@ msgid ""
 "             one (%s).\n"
 " %s >> %s "
 msgstr ""
-" El último kilometraje (%s) no puede ser mayor que el\n"
+" El último kilometraje (%s) no puede ser mayor que el"
 "             nuevo (%s).\n"
 " %s >> %s "
 

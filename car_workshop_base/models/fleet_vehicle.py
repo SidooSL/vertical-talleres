@@ -34,7 +34,7 @@ class FleetVehicle(models.Model):
     license_plate = fields.Char(
         required=True,
     )
-    odometer = fields.Float(
+    odometer = fields.Integer(
         tracking=True,
     )
     product_id = fields.Many2one(
@@ -59,9 +59,11 @@ class FleetVehicle(models.Model):
         inverse_name='vehicle_id',
         string='Repairs',
     )
-    vin_sn = fields.Char()
-    horsepower_tax = fields.Integer()
-    power = fields.Float()
+    odometer_unit = fields.Selection([
+        ('kilometers', 'km'),
+        ('hours', 'hours'),
+        ],
+    )
 
     @api.onchange('driver_id')
     def _onchange_driver_id(self):
