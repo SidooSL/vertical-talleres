@@ -18,25 +18,20 @@
 #
 ###############################################################################
 {
-    'name': 'Car Workshop Installer',
-    'summary': 'Install necesary modules for Car Worshop frame.',
-    'author': 'Óscar Soto Ochoa, Jorge Quinteros, SDi Soluciones Informáticas',
+    'name': 'Repair View Customize',
+    'summary': '''
+        Replaces the product_id field with the vehicle_id field on the Repair
+        View, and adds a triple field search
+    ''',
+    'author': 'Alberto Martínez Rodríguez, SDi Soluciones Informáticas',
     'website': 'https://sdi.es/odoo/',
     'license': 'AGPL-3',
     'category': 'Workshop',
     'version': '14.0.1.0.0',
     'depends': [
-        'board',
-        'car_workshop_base',
-        'calendar',
-        'contacts',
-        'fleet_search_customize',
-        'l10n_es',
-        'l10n_es_toponyms',
-        'l10n_es_partner',
-        'partner_filter_general',
-        'repair_view_customize',
-        'web_responsive',
-        'web_tree_many2one_clickable',
+        'repair',
     ],
+    'data': [
+        'views/repair_view_customize.xml'
+    ]
 }

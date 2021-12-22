@@ -1,3 +1,4 @@
+sdi-addons https://github.com/SDIsl/sdi-addons.git
 community-data-files
 l10n-spain
 partner-contact

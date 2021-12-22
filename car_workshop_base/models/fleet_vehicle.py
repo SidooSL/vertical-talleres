@@ -84,6 +84,10 @@ class FleetVehicle(models.Model):
             'sale_ok': False,
             'tracking': 'none',
             'type': 'product',
+            'active': False,
+        })
+        product.write({
+            'active': False,
         })
         rec.product_id = product
         move = self.env['stock.move'].create({
