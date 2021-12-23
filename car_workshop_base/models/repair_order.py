@@ -103,12 +103,6 @@ class RepairOrder(models.Model):
         string='Vehicle',
     )
 
-    @api.model
-    def create(self, values):
-        res = super().create(values)
-        res['name'] = self.env['ir.sequence'].next_by_code('repair.order')
-        return res
-
     @api.onchange('arrival_date')
     def _onchange_arrival_date(self):
         if self.arrival_date:
