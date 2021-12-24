@@ -85,6 +85,9 @@ class FleetVehicle(models.Model):
             'tracking': 'none',
             'type': 'product',
         })
+        product.product_tmpl_id.write({
+            'active': False,
+        })
         rec.product_id = product
         move = self.env['stock.move'].create({
             'location_id': self.env.company.internal_transit_location_id.id,

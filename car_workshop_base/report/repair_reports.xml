@@ -2,12 +2,12 @@
 <odoo>
     <data>
         <record id="action_report_vehicle_repair_order" model="ir.actions.report">
-            <field name="name">Vehicle Repair Order</field>
+            <field name="name">OR Vehicle Receipt</field>
             <field name="model">repair.order</field>
             <field name="report_name">car_workshop_base.report_vehiclerepairorder2</field>
             <field name="report_file">car_workshop_base.report_vehiclerepairorder</field>
             <field name="report_type">qweb-pdf</field>
-            <field name="print_report_name">('Vehicle Repair Order - %s' % (object.name))</field>
+            <field name="print_report_name">('OR Vehicle Receipt - %s' % (object.name))</field>
             <field name="binding_model_id" ref="model_repair_order"/>
             <field name="binding_type">report</field>
         </record>

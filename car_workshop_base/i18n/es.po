@@ -29,8 +29,8 @@ msgstr ""
 
 #. module: car_workshop_base
 #: model:ir.actions.report,print_report_name:car_workshop_base.action_report_vehicle_repair_order
-msgid "('Vehicle Repair Order - %s' % (object.name))"
-msgstr "('Orden de Reparación de Vehículo - %s' % (object.name))"
+msgid "('OR Vehicle Receipt - %s' % (object.name))"
+msgstr "('Resguardo vehículo OR - %s' % (object.name))"
 
 #. module: car_workshop_base
 #: model_terms:ir.ui.view,arch_db:car_workshop_base.fleet_vehicle_view_form
@@ -491,8 +491,8 @@ msgstr "Reparación de vehículo"
 
 #. module: car_workshop_base
 #: model:ir.actions.report,name:car_workshop_base.action_report_vehicle_repair_order
-msgid "Vehicle Repair Order"
-msgstr "Orden de Reparación de Vehículo"
+msgid "OR Vehicle Receipt"
+msgstr "Resguardo vehículo OR"
 
 #. module: car_workshop_base
 #: model:ir.actions.act_window,name:car_workshop_base.res_partner_vehicles

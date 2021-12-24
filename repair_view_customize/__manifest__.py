@@ -1,7 +1,7 @@
 ###############################################################################
 #
-#    SDi Soluciones Digitales
-#    Copyright (C) 2021-Today SDi Soluciones Digitales <www.sdi.es>
+#    SDi Soluciones Informáticas
+#    Copyright (C) 2021-Today SDi Soluciones Informáticas <www.sdi.es>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,31 +18,20 @@
 #
 ###############################################################################
 {
-    'name': 'Car Workshop Base',
-    'summary': 'Car workshop base module.',
-    'author': 'Óscar Soto Ochoa, Valentín Georgian Castravete, Alberto'
-              ' Martínez Rodríguez, SDi Soluciones Digitales',
+    'name': 'Repair View Customize',
+    'summary': '''
+        Replaces the product_id field with the vehicle_id field on the Repair
+        View, and adds a triple field search
+    ''',
+    'author': 'Alberto Martínez Rodríguez, SDi Soluciones Informáticas',
     'website': 'https://sdi.es/odoo/',
     'license': 'AGPL-3',
     'category': 'Workshop',
     'version': '14.0.1.0.0',
     'depends': [
-        'fleet',
         'repair',
-        'sale',
     ],
     'data': [
-        'data/brand_data.xml',
-        'security/car_workshop_security.xml',
-        'security/ir.model.access.csv',
-        'report/repair_reports.xml',
-        'report/repair_templates_vehicle_repair_order.xml',
-        'report/report_repairorder.xml',
-        'views/car_workshop_menu_views.xml',
-        'views/fleet_vehicle.xml',
-        'views/repair_lines_report.xml',
-        'views/repair_order.xml',
-        'views/res_partner.xml',
-    ],
-    'application': True,
+        'views/repair_view_customize.xml',
+    ]
 }
