@@ -32,6 +32,6 @@
         'repair',
     ],
     'data': [
-        'views/repair_view_customize.xml'
+        'views/repair_view_customize.xml',
     ]
 }

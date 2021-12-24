@@ -17,7 +17,7 @@
         <field name="inherit_id" ref="repair.view_repair_order_form_filter"/>
         <field name="arch" type="xml">
             <field name="name" position="replace">
-                <field name="name" string="Repair Order, vehicle, client" filter_domain="['|','|','|', ('name', 'ilike', self), ('product_id', 'ilike', self), ('vehicle_id', 'ilike', self), ('partner_id', 'ilike', self)]"/>
+                <field name="name" string="Repair Order, vehicle or client" filter_domain="['|','|','|', ('name', 'ilike', self), ('product_id', 'ilike', self), ('vehicle_id', 'ilike', self), ('partner_id', 'ilike', self)]"/>
             </field>
         </field>
     </record>

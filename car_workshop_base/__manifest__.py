@@ -20,8 +20,8 @@
 {
     'name': 'Car Workshop Base',
     'summary': 'Car workshop base module.',
-    'author': 'Óscar Soto Ochoa, Valentín Georgian Castravete,'
-              ' SDi Soluciones Digitales',
+    'author': 'Óscar Soto Ochoa, Valentín Georgian Castravete, Alberto'
+              ' Martínez Rodríguez, SDi Soluciones Digitales',
     'website': 'https://sdi.es/odoo/',
     'license': 'AGPL-3',
     'category': 'Workshop',

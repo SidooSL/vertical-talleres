@@ -19,5 +19,5 @@ msgstr ""
 
 #. module: repair_view_customize
 #: model_terms:ir.ui.view,arch_db:repair_view_customize.view_repair_order_form_filter
-msgid "Repair Order, vehicle, client"
+msgid "Repair Order, vehicle or client"
 msgstr "Orden de reparación, vehículo o cliente"

@@ -84,9 +84,8 @@ class FleetVehicle(models.Model):
             'sale_ok': False,
             'tracking': 'none',
             'type': 'product',
-            'active': False,
         })
-        product.write({
+        product.product_tmpl_id.write({
             'active': False,
         })
         rec.product_id = product
