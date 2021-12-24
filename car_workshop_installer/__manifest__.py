@@ -21,7 +21,7 @@
     'name': 'Car Workshop Installer',
     'summary': 'Install necesary modules for Car Worshop frame.',
     'author': 'Óscar Soto Ochoa, Jorge Quinteros, Alberto Martínez Rodríguez, '
-        'SDi Soluciones Informáticas',
+              'SDi Soluciones Informáticas',
     'website': 'https://sdi.es/odoo/',
     'license': 'AGPL-3',
     'category': 'Workshop',
