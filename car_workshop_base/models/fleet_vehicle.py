@@ -44,7 +44,6 @@ class FleetVehicle(models.Model):
     )
     model_version = fields.Char(
         string='Model Version',
-        required=True,
     )
     next_mot = fields.Date(
         string='Next MOT',

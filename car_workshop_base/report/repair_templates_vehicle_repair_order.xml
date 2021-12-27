@@ -4,19 +4,19 @@
 
         <template id="report_vehiclerepairorder_main_info">
             <h5>
-                <span>Resguardo Vehículo OR #:</span>
-                <span t-field="o.name"/>
+                <span>
+                    <t t-if="receiver">
+                        Resguardo de depósito - 
+                        Ejemplar para el <span t-esc="receiver"/>
+                    </t>
+                    <t t-else="">
+                        Control interno taller
+                    </t>
+                </span>
             </h5>
             <h6>
-                <t t-if="receiver">
-                    Orden de reparación - 
-                    <small>
-                        Ejemplar para el <span t-esc="receiver"/>
-                    </small>
-                </t>
-                <t t-else="">
-                    Control interno taller
-                </t>
+                Orden de reparación #:
+                <span t-field="o.name"/>
             </h6>
             <br/>
             <div class="row">
