@@ -516,3 +516,8 @@ msgstr "¿Quién lo recoge? ¿A quién hay que enviarlo?"
 msgid "You cannot set the odometer to 0. Please, set it."
 msgstr ""
 "No puedes establecer el kilometraje a 0. Por favor, establézcalo de nuevo."
+
+#. module: car_workshop_base
+#: model_terms:ir.ui.view,arch_db:car_workshop_base.view_repair_order_form_filter
+msgid "Repair Order, vehicle or client"
+msgstr "Orden de reparación, vehículo o cliente"

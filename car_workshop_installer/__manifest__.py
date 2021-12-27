@@ -36,7 +36,6 @@
         'l10n_es_toponyms',
         'l10n_es_partner',
         'partner_filter_general',
-        'repair_view_customize',
         'web_responsive',
         'web_tree_many2one_clickable',
     ],
