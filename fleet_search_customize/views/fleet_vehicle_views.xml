@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="fleet.fleet_vehicle_view_search"/>
         <field name="arch" type="xml">
             <field name="name" position="replace">
-                <field name="name" string="Name, License plate, Model, Version or Driver" filter_domain="['|','|','|','|',('name', 'ilike', self), ('license_plate', 'ilike', self), ('model_id', 'ilike', self), ('model_version', 'ilike', self), ('driver_id', 'ilike', self)]"/>
+                <field name="name" string="Name, License plate, Model, Version, Driver or Tags" filter_domain="['|','|','|','|','|',('name', 'ilike', self), ('license_plate', 'ilike', self), ('model_id', 'ilike', self), ('model_version', 'ilike', self), ('driver_id', 'ilike', self), ('tag_ids', 'ilike', self)]"/>
             </field>         
         </field>
     </record>

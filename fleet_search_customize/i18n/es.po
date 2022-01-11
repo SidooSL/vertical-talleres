@@ -19,5 +19,5 @@ msgstr ""
 
 #. module: fleet_search_customize
 #: model_terms:ir.ui.view,arch_db:fleet_search_customize.fleet_vehicle_view_search
-msgid "Name, License plate, Model, Version or Driver"
-msgstr "Nombre, matrícula, modelo, versión o conductor"
+msgid "Name, License plate, Model, Version, Driver or Tags"
+msgstr "Nombre, matrícula, modelo, versión, conductor o etiquetas"
