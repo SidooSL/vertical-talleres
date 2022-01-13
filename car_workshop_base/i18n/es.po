@@ -524,8 +524,8 @@ msgstr "Orden de reparación, vehículo o cliente"
 
 #. module: car_workshop_base
 #: model_terms:ir.ui.view,arch_db:car_workshop_base.report_invoice_document
-msgid "<span>Reference</span>"
-msgstr "<span>Referencia</span>"
+msgid "<span>Repair Reference</span>"
+msgstr "<span>Referencia de reparación</span>"
 
 #. module: car_workshop_base
 #: model_terms:ir.ui.view,arch_db:car_workshop_base.report_invoice_document
@@ -534,8 +534,8 @@ msgstr "<span>Matrícula vehículo</span>"
 
 #. module: car_workshop_base
 #: model_terms:ir.ui.view,arch_db:car_workshop_base.report_invoice_document
-msgid "<span>Last Odometer</span>"
-msgstr "<span>Último odómetro</span>"
+msgid "<span>Odometer</span>"
+msgstr "<span>Odómetro</span>"
 
 #. module: car_workshop_base
 #: model_terms:ir.ui.view,arch_db:car_workshop_base.report_invoice_document
