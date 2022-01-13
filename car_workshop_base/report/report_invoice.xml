@@ -5,9 +5,9 @@
             <table class="table table-sm o_main_table" name="invoice_line_table">
                 <thead>
                     <tr>
-                        <th name="th_reference" class="text"><span>Reference</span></th>
+                        <th name="th_reference" class="text"><span>Repair Reference</span></th>
                         <th name="th_licenese" class="text"><span>Vehicle License Plate</span></th>
-                        <th name="th_odometer" class="text"><span>Last Odometer</span></th>
+                        <th name="th_odometer" class="text"><span>Odometer</span></th>
                         <th name="th_date" class="text"><span>Arrival Date</span></th>
                     </tr>
                 </thead>
@@ -16,7 +16,7 @@
                         <tr>
                             <td name="account_invoice_line_name"><span t-field="repair.name"/></td>
                             <td name="account_invoice_line_name2"><span t-field="repair.vehicle_id.license_plate"/></td>
-                            <td name="account_invoice_line_name3"><span t-field="repair.odometer"/>km</td>
+                            <td name="account_invoice_line_name3"><span t-field="repair.new_odometer"/>km</td>
                             <td name="account_invoice_line_name4"><span t-field="repair.arrival_date"/></td>
                         </tr>
                     </t>
