@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@id='informations']" position="after">
+            <table class="table table-sm o_main_table" name="invoice_line_table">
+                <thead>
+                    <tr>
+                        <th name="th_reference" class="text"><span>Reference</span></th>
+                        <th name="th_licenese" class="text"><span>Vehicle License Plate</span></th>
+                        <th name="th_odometer" class="text"><span>Last Odometer</span></th>
+                        <th name="th_date" class="text"><span>Arrival Date</span></th>
+                    </tr>
+                </thead>
+                <tbody class="invoice_tbody">
+                    <t t-foreach="o.repair_ids" t-as="repair">
+                        <tr>
+                            <td name="account_invoice_line_name"><span t-field="repair.name"/></td>
+                            <td name="account_invoice_line_name2"><span t-field="repair.vehicle_id.license_plate"/></td>
+                            <td name="account_invoice_line_name3"><span t-field="repair.odometer"/>km</td>
+                            <td name="account_invoice_line_name4"><span t-field="repair.arrival_date"/></td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </xpath>
+        <xpath expr="//div[@t-if='o.invoice_origin']" position="replace"> 
+        </xpath>
+    </template>
+</odoo>
