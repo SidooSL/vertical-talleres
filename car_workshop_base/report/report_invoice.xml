@@ -26,5 +26,14 @@
         <xpath expr="//div[@t-if='o.invoice_origin']" position="attributes"> 
             <attribute name="t-if">False</attribute>
         </xpath>
+        <xpath expr="//div[@t-if='o.partner_id.vat']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>  
+        <xpath expr="//div[@name='customer_code']" position="after">
+            <div class="col-auto col-3 mw-100 mb-2" t-if="o.partner_id.vat" name="customer_vat">
+                <strong>Customer Vat:</strong>
+                <p class="m-0" t-field="o.partner_id.vat"/>
+            </div>
+        </xpath>  
     </template>
 </odoo>
