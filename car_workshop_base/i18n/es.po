@@ -541,3 +541,8 @@ msgstr "<span>Odómetro</span>"
 #: model_terms:ir.ui.view,arch_db:car_workshop_base.report_invoice_document
 msgid "<span>Arrival Date</span>"
 msgstr "<span>Fecha de entrada</span>"
+
+#. module: car_workshop_base
+#: model_terms:ir.ui.view,arch_db:car_workshop_base.report_invoice_document
+msgid "<strong>Customer Vat:</strong>"
+msgstr "<strong>NIF Cliente:</strong>"
