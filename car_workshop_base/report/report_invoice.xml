@@ -35,5 +35,29 @@
                 <p class="m-0" t-field="o.partner_id.vat"/>
             </div>
         </xpath>  
+        <xpath expr="//span[@t-field='line.name']" position="replace">
+            <span t-field="line.product_id.display_name" t-options="{'widget': 'text'}"/>
+        </xpath>
+        <xpath expr="//t[@t-foreach='lines']/t" position="before">
+            <t t-foreach="line.move_id.repair_ids" t-as="repair">
+                <t t-if="repair.name in line.name">
+                    <t t-if="last_repair_id != repair.name">
+                        <t t-set="last_repair_id" t-value="repair.name"/>
+                        <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                            <td colspan="99">
+                                <strong><span t-field="repair.name" t-options="{'widget': 'text'}"/></strong>
+                            </td>
+                        </tr>
+                        <t t-if="repair.internal_notes">
+                            <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                                <td colspan="99">
+                                    <span t-field="repair.internal_notes" t-options="{'widget': 'text'}"/>
+                                </td> 
+                            </tr>
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </xpath>
     </template>
 </odoo>
