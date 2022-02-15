@@ -33,6 +33,7 @@
         'contacts',
         'fleet_search_customize',
         'l10n_es',
+        'l10n_es_facturae',
         'l10n_es_toponyms',
         'l10n_es_partner',
         'partner_filter_general',
