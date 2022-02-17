@@ -51,10 +51,10 @@
                                 <strong><span t-field="repair.name" t-options="{'widget': 'text'}"/></strong>
                             </td>
                         </tr>
-                        <t t-if="repair.internal_notes">
+                        <t t-if="repair.quotation_notes">
                             <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
                                 <td colspan="99">
-                                    <span t-field="repair.internal_notes" t-options="{'widget': 'text'}"/>
+                                    <span t-field="repair.quotation_notes" t-options="{'widget': 'text'}"/>
                                 </td> 
                             </tr>
                         </t>
