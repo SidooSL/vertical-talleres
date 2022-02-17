@@ -38,6 +38,9 @@
         <xpath expr="//span[@t-field='line.name']" position="replace">
             <span t-field="line.product_id.display_name" t-options="{'widget': 'text'}"/>
         </xpath>
+        <xpath expr="//t[@t-foreach='lines']" position="before">
+            <t t-set="last_repair_id" t-value="'\0'"/>
+        </xpath>
         <xpath expr="//t[@t-foreach='lines']/t" position="before">
             <t t-foreach="line.move_id.repair_ids" t-as="repair">
                 <t t-if="repair.name in line.name">
