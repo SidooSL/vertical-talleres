@@ -170,7 +170,7 @@ class RepairOrder(models.Model):
             self.repair_type = 'vehicle_repair'
 
     def _create_invoices(self, group=False):
-        moves = super(RepairOrder, self)._create_invoices(group)
+        moves = super()._create_invoices(group)
 
         if group:
             repairs = list(
@@ -186,8 +186,6 @@ class RepairOrder(models.Model):
             i = 0
             new_lines = 0
             while i < len(invoice.invoice_line_ids) - new_lines:
-                print(len(invoice.invoice_line_ids) - new_lines)
-                print(line_names[i])
                 for repair in repairs:
                     if repair.name in line_names[i]:
                         invoice.write({
