@@ -108,7 +108,7 @@ class FleetVehicle(models.Model):
         return rec
 
     def button_vehicle_repair_lines_report(self):
-        return{
+        return {
             'name': _('Operations & Fees History'),
             'view_mode': 'tree',
             'res_model': 'repair.lines.report',
