@@ -12,6 +12,7 @@ contract
 credit-control
 edi
 event
+fleet
 hr
 l10n-spain
 partner-contact
