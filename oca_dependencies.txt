@@ -1,5 +1,6 @@
 sdi-addons https://github.com/SDIsl/sdi-addons.git
 lab-addons https://github.com/SDIsl/lab-addons.git
+account-analytic
 account-financial-tools
 account-financial-reporting
 account-payment
