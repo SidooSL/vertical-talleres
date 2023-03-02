@@ -28,5 +28,6 @@ stock-logistics-workflow
 survey
 timesheet
 mis-builder
+vertical-rental
 web
 website
