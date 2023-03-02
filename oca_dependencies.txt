@@ -20,6 +20,7 @@ partner-contact
 product-attribute
 queue
 reporting-engine
+sale-workflow
 server-auth
 server-brand
 server-ux
