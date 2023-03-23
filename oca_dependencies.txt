@@ -1,5 +1,5 @@
-sdi-addons https://github.com/SDIsl/sdi-addons.git
-lab-addons https://github.com/SDIsl/lab-addons.git
+sdi-addons git@github.com:SDIsl/sdi-addons.git
+lab-addons git@github.com:SDIsl/lab-addons.git
 account-analytic
 account-closing
 account-financial-tools
