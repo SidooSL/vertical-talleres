@@ -1,4 +1,4 @@
-sdi-addons git@github.com:SDIsl/sdi-addons.git
+sdi-addons https://github.com/SDIsl/sdi-addons.git
 lab-addons git@github.com:SDIsl/lab-addons.git
 account-analytic
 account-closing
