@@ -2,7 +2,6 @@
 # For copyright and license notices, see __manifest__.py file in root directory
 ###############################################################################
 from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
 from datetime import datetime, timedelta
 
 
@@ -17,6 +16,14 @@ class RepairOrder(models.Model):
                 return fields.Date.to_string(datetime.now() + timedelta(days))
         return False
 
+    product_id = fields.Many2one(
+        'product.product', string='Product to Repair',
+        domain="[('type', 'in', ['product', 'consu']), '|', ('company_id', '=', company_id), ('company_id', '=', False)]",
+        readonly=True, required=False, states={'draft': [('readonly', False)]}, check_company=True)
+    product_uom = fields.Many2one(
+        'uom.uom', 'Product Unit of Measure',
+        compute='_compute_product_uom', store=True, precompute=True,
+        readonly=True, required=False, states={'draft': [('readonly', False)]}, domain="[('category_id', '=', product_uom_category_id)]")
     address_id = fields.Many2one(
         help='Who picks it up? Who should it be sent to?',
     )
@@ -107,13 +114,6 @@ class RepairOrder(models.Model):
     def _onchange_arrival_date(self):
         if self.arrival_date:
             self.date_deadline = self.arrival_date + timedelta(days=2)
-
-    @api.constrains('new_odometer')
-    def _check_new_odometer(self):
-        if self.vehicle_id and self.new_odometer <= 0:
-            raise ValidationError(_(
-                'You cannot set the odometer to 0. Please, set it.'))
-        return True
 
     @api.onchange('new_odometer')
     def _onchange_new_odometer(self):

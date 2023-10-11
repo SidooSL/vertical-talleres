@@ -8,7 +8,7 @@
     <menuitem id="menu_attribute_action" parent="menu_sales_configuration" action="product.attribute_action" sequence="4" groups="product.group_product_variant"/>
     <menuitem id="menu_stock" name="Stock" parent="repair.menu_repair_order" sequence="8"/>
     <menuitem id="menu_product_categories" parent="menu_stock" action="product.product_category_action_form" sequence="4"/>
-    <menuitem id="fleet.fleet_vehicle_log_contract_menu" parent="fleet.fleet_vehicles" groups="car_workshop_base.group_renting"/>
-    <menuitem id="fleet.fleet_vehicle_log_services_menu" parent="fleet.fleet_vehicles" groups="car_workshop_base.group_renting"/>
-    <menuitem id="fleet.fleet_vehicle_service_types_menu" parent="fleet.fleet_configuration" groups="car_workshop_base.group_renting"/>
+    <menuitem id="fleet.fleet_vehicle_log_contract_menu" name="Fleet Contract" parent="fleet.fleet_vehicles" groups="car_workshop_base.group_renting"/>
+    <menuitem id="fleet.fleet_vehicle_log_services_menu" name="Fleet Services" parent="fleet.fleet_vehicles" groups="car_workshop_base.group_renting"/>
+    <menuitem id="fleet.fleet_vehicle_service_types_menu" name="Fleet Service Types" parent="fleet.fleet_configuration" groups="car_workshop_base.group_renting"/>
 </odoo>

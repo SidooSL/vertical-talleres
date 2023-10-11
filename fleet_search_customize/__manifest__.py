@@ -21,7 +21,7 @@
     'name': 'Fleet Search Customize',
     'summary': 'Add customize filter to fleet.',
     'category': 'Fleet',
-    'version': '14.0.1.0.1',
+    'version': '16.0.0.0.1',
     'author': 'Jorge Luis Quinteros, SDi Soluciones Informáticas',
     'website': 'https://www.sdi.es/odoo/',
     'license': 'AGPL-3',

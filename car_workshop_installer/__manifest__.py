@@ -25,7 +25,7 @@
     'website': 'https://sdi.es/odoo/',
     'license': 'AGPL-3',
     'category': 'Workshop',
-    'version': '14.0.1.0.0',
+    'version': '16.0.0.0.1',
     'depends': [
         'board',
         'car_workshop_base',
@@ -36,7 +36,6 @@
         'l10n_es_facturae',
         'l10n_es_toponyms',
         'l10n_es_partner',
-        'partner_filter_general',
         'web_responsive',
         'web_tree_many2one_clickable',
     ],

@@ -25,7 +25,7 @@
     'website': 'https://sdi.es/odoo/',
     'license': 'AGPL-3',
     'category': 'Workshop',
-    'version': '14.0.1.0.0',
+    'version': '16.0.0.0.1',
     'depends': [
         'fleet',
         'repair',
