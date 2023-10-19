@@ -18,15 +18,24 @@ class RepairOrder(models.Model):
 
     product_id = fields.Many2one(
         'product.product', string='Product to Repair',
-        domain="[('type', 'in', ['product', 'consu']), '|', ('company_id', '=', company_id), ('company_id', '=', False)]",
-        readonly=True, required=False, states={'draft': [('readonly', False)]}, check_company=True)
+        domain="[('type', 'in', ['product', 'consu']), '|', "
+               "('company_id', '=', company_id), "
+               "('company_id', '=', False)]",
+        readonly=True, required=False,
+        states={'draft': [('readonly', False)]},
+        check_company=True)
     product_uom = fields.Many2one(
         'uom.uom', 'Product Unit of Measure',
         compute='_compute_product_uom', store=True, precompute=True,
-        readonly=True, required=False, states={'draft': [('readonly', False)]}, domain="[('category_id', '=', product_uom_category_id)]")
+        readonly=True, required=False,
+        states={'draft': [('readonly', False)]},
+        domain="[('category_id', '=', product_uom_category_id)]")
     address_id = fields.Many2one(
+        'res.partner', string='Address',
         help='Who picks it up? Who should it be sent to?',
-    )
+        readonly=True, states={'draft': [('readonly', False)]},
+        domain="[('parent_id', '=', partner_id)]",
+        check_company=True)
     arrival_date = fields.Datetime(
         string='Arrival Date',
         help='The arrival date of the vehicle.',
@@ -176,11 +185,11 @@ class RepairOrder(models.Model):
             repairs = list(
                 self.env['repair.order'].search(
                     [['id', 'in', list(moves.keys())]]
-                    )
                 )
+            )
             invoice = self.env['account.move'].search(
                 [['id', 'in', list(moves.values())]]
-                )
+            )
             line_names = [line.name for line in invoice.invoice_line_ids]
 
             i = 0
