@@ -3,6 +3,7 @@
 ###############################################################################
 from odoo import _, api, fields, models
 from datetime import datetime, timedelta
+from odoo.tools import html2plaintext
 
 
 class RepairOrder(models.Model):
@@ -178,42 +179,51 @@ class RepairOrder(models.Model):
             self.product_id = self.vehicle_id.product_id
             self.repair_type = 'vehicle_repair'
 
-    def _create_invoices(self, group=False):
+    def _create_invoices(self, group=False, show_repair_note=True, show_origin_section=True):
         moves = super()._create_invoices(group)
 
-        if group:
+        if show_origin_section or show_repair_note:
             repairs = list(
                 self.env['repair.order'].search(
                     [['id', 'in', list(moves.keys())]]
                 )
             )
-            invoice = self.env['account.move'].search(
+            invoices = self.env['account.move'].search(
                 [['id', 'in', list(moves.values())]]
             )
-            line_names = [line.name for line in invoice.invoice_line_ids]
 
-            i = 0
-            new_lines = 0
-            while i < len(invoice.invoice_line_ids) - new_lines:
-                for repair in repairs:
-                    if repair.name in line_names[i]:
-                        invoice.write({
-                            'invoice_line_ids':  [(0, 0, {
-                                'name': repair.name,
-                                'display_type': 'line_section',
-                                'sequence': i + new_lines + 1,
-                            })]})
-                        new_lines = new_lines + 1
-                        if repair.quotation_notes:
-                            invoice.write({
-                                'invoice_line_ids':  [(0, 0, {
-                                    'name': repair.quotation_notes,
-                                    'display_type': 'line_note',
-                                    'sequence': i + new_lines + 1,
-                                })]})
-                            new_lines = new_lines + 1
-                        repairs.remove(repair)
-                invoice.invoice_line_ids[i].write({'sequence': i+new_lines+1})
-                i = i + 1
-            invoice.write({'narration': ''})
+            for invoice in invoices:
+                line_names = [line.name for line in invoice.invoice_line_ids]
+                invoice_repairs = repairs.copy()
+                if not group:
+                    for repair in repairs:
+                        if repair.name != invoice.invoice_origin:
+                            invoice_repairs.remove(repair)
+
+                i = 0
+                new_lines = 0
+                while i < len(invoice.invoice_line_ids) - new_lines:
+                    for repair in invoice_repairs:
+                        if not group or repair.name in line_names[i]:
+                            if show_origin_section:
+                                invoice.write({
+                                    'invoice_line_ids':  [(0, 0, {
+                                        'name': repair.name,
+                                        'display_type': 'line_section',
+                                        'sequence': i + new_lines + 1,
+                                    })]})
+                                new_lines = new_lines + 1
+                            if show_repair_note and repair.quotation_notes:
+                                invoice.write({
+                                    'invoice_line_ids':  [(0, 0, {
+                                        'name': html2plaintext(repair.quotation_notes),
+                                        'display_type': 'line_note',
+                                        'sequence': i + new_lines + 1,
+                                    })]})
+                                new_lines = new_lines + 1
+                            repairs.remove(repair)
+                            invoice_repairs.remove(repair)
+                    invoice.invoice_line_ids[i].write({'sequence': i+new_lines+1})
+                    i = i + 1
+                    invoice.write({'narration': ''})
         return moves

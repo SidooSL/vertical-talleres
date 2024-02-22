@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="account_invoice_form">
+        <field name="name">Account Invoice</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button"
+                        name="action_view_source_repair_orders"
+                        type="object"
+                        icon="fa-pencil-square-o"
+                        attrs="{'invisible': ['|', ('repair_order_count', '=', 0), ('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))]}">
+                    <field string="Repair Orders" name="repair_order_count" widget="statinfo"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

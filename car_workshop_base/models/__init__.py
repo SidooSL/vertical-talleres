@@ -6,3 +6,5 @@ from . import fleet_vehicle_model
 from . import repair_line
 from . import repair_lines_report
 from . import repair_order
+from . import sale_order
+from . import account_move

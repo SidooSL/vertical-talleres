@@ -44,6 +44,7 @@
         'views/repair_lines_report.xml',
         'views/repair_order.xml',
         'views/res_partner.xml',
+        'views/account_views.xml'
     ],
     'application': True,
 }
