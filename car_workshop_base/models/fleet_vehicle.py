@@ -115,3 +115,8 @@ class FleetVehicle(models.Model):
             'type': 'ir.actions.act_window',
             'domain': [('repair_id', 'in', self.repair_ids.ids)],
         }
+
+    @api.onchange('license_plate')
+    def _onchange_license_plate(self):
+        if self.license_plate and self.product_id:
+            self.product_id.name = self.display_name
